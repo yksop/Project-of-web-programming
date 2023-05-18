@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Aderente</title>
+    <link rel="stylesheet" href="css/aderente.css">
+</head>
+
+<body>
+    <button class="logout-button" onclick="window.location.href='signIn.html'">Logout</button>
+    <h1 style="position: center">Bentornato socio!</h1>
+
+
+    <div class="menu-button-cont">
+    <button class="menu-button" onclick="toggleElement('profile-data')">Visualizza Dati Profilo</button>
+    <button class="menu-button" onclick="toggleElement('activity-registration')">Iscrizione alle attività</button>
+    <button class="menu-button" onclick="toggleElement('donation-section')">Effettua una donazione</button>
+    <button class="menu-button" onclick="toggleElement('cancel-subscription')">Cancella Iscrizione</button>
+    </div>
+
+    <div id="profile-data" class="content-container show-content">
+        <ul>
+            <li>Nome:</li>
+            <li>Cognome:</li>
+            <li>Data di nascita:</li>
+            <li>Email:</li>
+            <li>Telefono:</li>
+            <li>Username:</li>
+            <li>Password:</li>
+        </ul>
+    </div>
+
+    <div id="activity-registration" class="content-container show-content">
+        <input type="checkbox" id="volunteer"> <label for="volunteer">Volontariato</label><br>
+        <input type="checkbox" id="soup-kitchen"> <label for="soup-kitchen">Mensa Poveri</label><br>
+        <input type="checkbox" id="civil-help"> <label for="civil-help">Aiuto Civile</label><br>
+        <input type="checkbox" id="meetings"> <label for="meetings">Riunioni</label><br>
+    </div>
+
+    <div id="donation-section" class="content-container show-content">
+        <input type="number" id="donation-input" placeholder="Inserisci la cifra in euro">
+        <button id="donation-button" onclick="sendDonation()">Invia donazione</button>
+        <div id="donation-message" style="display: none; text-align: center; margin-top: 20px; font-size: 40px; color: lightseagreen"></div>
+    </div>
+
+
+    <div id="cancel-subscription" class="content-container show-content">
+        <p>Sei sicuro di voler cancellare l'iscrizione?</p>
+        <div class="confirm-buttons">
+            <button onclick="cancelConfirmation()">Conferma</button>
+            <button onclick="toggleElement('cancel-subscription')">Indietro</button>
+        </div>
+    </div>
+
+    <div id="confirmation-message" class="confirm-container" style="display: none; text-align: center; margin-top: 20px; font-size: 40px; color: lightseagreen"></div>
+
+
+    <script>
+        function toggleElement(elementId) {
+            var element = document.getElementById(elementId);
+            var contentContainers = document.getElementsByClassName('content-container');
+            for (var i = 0; i < contentContainers.length; i++) {
+                contentContainers[i].classList.remove('show-content');
+            }
+            element.classList.add('show-content');
+        }
+
+        function cancelConfirmation() {
+            var confirmationMessage = document.getElementById('confirmation-message');
+            confirmationMessage.innerText = 'Iscrizione cancellata';
+            confirmationMessage.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'signIn.html';
+            }, 3000);
+        }
+
+        function sendDonation() {
+            var donationAmount = document.getElementById('donation-input').value;
+            if (donationAmount !== '') {
+                document.getElementById('donation-input').value = '';
+                var messageDiv = document.getElementById('donation-message');
+                messageDiv.innerText = 'Grazie per aver donato!';
+                messageDiv.style.display = 'block';
+                setTimeout(function() {
+                    messageDiv.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>

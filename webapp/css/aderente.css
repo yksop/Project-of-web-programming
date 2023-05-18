@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: ghostwhite;
+}
+
+@keyframes titleAnimation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    animation: titleAnimation 1s ease-in-out;
+    margin-top: 50px;
+    animation-fill-mode: forwards;
+    /*text-shadow: #cc00cc 1px 1px;*/
+    margin-left: 130px;
+}
+
+.menu-button-cont{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50vh; /* Altezza del container, puoi modificarla come preferisci */
+}
+
+.logout-button {
+    float: right;
+    margin-top: 1px;
+    margin-right: 30px;
+    background-color: coral;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #009900;
+}
+
+.menu-button {
+    display: block;
+    margin-left: 30px;
+    margin-top: 25px;
+    background-color: midnightblue;
+    color: #ffffff;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    width: 200px;
+}
+
+.menu-button:hover {
+    background-color: #cc00cc;
+    transform: translate(0, -2px);
+}
+
+#profile-data {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#activity-registration {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#donation-section {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#cancel-subscription {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#donation-input {
+    margin-right: 10px;
+}
+
+#donation-button {
+    background-color: #0000ff;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#donation-button:hover {
+    background-color: #000099;
+}
+
+.content-container {
+    position: center;
+    transform: translate(-50%, -50%);
+    /* Altri stili per il contenuto */
+}
+
+.show-content {
+    display: block;
+}
