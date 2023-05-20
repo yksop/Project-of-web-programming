@@ -9,7 +9,7 @@
 
 .intestazione {
   background-color: #5B9BE1;
-  padding: 5%;
+  padding: 2%;
   box-shadow: 5px 5px 15px -10px #000000;
 }
 
@@ -44,7 +44,6 @@ nav ul li a {
 
 .footer {
   padding: 3%;
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #5B9BE1;
