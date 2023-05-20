@@ -20,8 +20,8 @@
         <div class="colonna-attivita">
           <p>
             Tum4World è un'organizzazione umanitaria impegnata nella distribuzione di cibo in diverse regioni del mondo, tra cui l'America Latina, l'Asia e l'Africa.
-            Attraverso un approccio globale e collaborativo, Tum4World si impegna a fornire sostegno alimentare alle comunità più vulnerabili e affrontare l'insicurezza alimentare diffusa in queste regioni.
-            Per riuscire in questa impresa Tum4World lavora a stretto contatto con organizzazioni locali, governi e altre parti interessate per identificare le comunità più bisognose. Questa fase è cruciale per garantire che i bisogni alimentari delle persone siano adeguatamente valutati e che le risorse siano dirette alle aree più colpite.
+            Attraverso un approccio globale e collaborativo, cii impegnamo a fornire sostegno alimentare alle comunità più vulnerabili e affrontare l'insicurezza alimentare diffusa in queste regioni.
+            Per riuscire in questa impresa lavoriamo a stretto contatto con organizzazioni locali, governi e altre parti interessate per identificare le comunità più bisognose. Questa fase è cruciale per garantire che i bisogni alimentari delle persone siano adeguatamente valutati e che le risorse siano dirette alle aree più colpite.
             Per saperne di più clicca <a href="PaginaAttivitaCibo.jsp">qui</a> oppure sull'immagine qui accanto.
           </p>
         </div>
@@ -37,7 +37,7 @@
         <div class="colonna-attivita">
           <p>
             Come organizzazione umanitaria siamo impegnati anche nella protezione dell'ambiente e nella promozione dello sviluppo sostenibile. Per questo, svolge un ruolo fondamentale, piantare alberi in America Latina, Asia e Africa. 
-            Attraverso il nostro impegno nel ripristino forestale e nella conservazione degli ecosistemi, miriamo a mitigare il cambiamento climatico, migliorare la qualità dell'aria, preservare la biodiversità e fornire sostegno alle comunità locali. 
+            Attraverso il nostro impegno nel ripristino forestale e nella conservazione degli ecosistemi, miriamo a mitigare il cambiamento climatico e preservare la biodiversità, fornendo sostegno alle comunità locali. 
             Per saperne di più clicca <a href="PaginaAttivitaAlberi.jsp">qui</a> oppure sull'immagine qui accanto.          </p>
         </div>
       </div>
@@ -45,7 +45,7 @@
       <div class="riga-attivita">
         <div class="colonna-attivita">
           <p>
-            Siamo anche impegnati nell'aiutare gli sfollati in America Latina, Asia e Africa.
+            Siamo anche impegnati nell'aiutare gli sfollati nelle zone sopra citate.
             In queste regioni, conflitti armati, disastri naturali e altre crisi causano migliaia di persone costrette a lasciare le proprie case e ad affrontare situazioni di emergenza.
             Tum4World si impegna a fornire sostegno immediato agli sfollati, inclusa l'assistenza essenziale, la protezione e il supporto psicosociale.
             Per saperne di più clicca <a href="PaginaAttivitaVolontariato.jsp">qui</a> oppure sull'immagine qui accanto.          

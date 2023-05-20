@@ -19,8 +19,9 @@
       <div class="riga-corpo">
         <div class="colonna-corpo">
           <p>
-            Come organizzazione umanitaria siamo impegnati anche nella protezione dell'ambiente e nella promozione dello sviluppo sostenibile. Per questo, svolge un ruolo fondamentale, piantare alberi in America Latina, Asia e Africa. 
-            Attraverso il nostro impegno nel ripristino forestale e nella conservazione degli ecosistemi, miriamo a mitigare il cambiamento climatico, migliorare la qualità dell'aria, preservare la biodiversità e fornire sostegno alle comunità locali. 
+            Tum4World è un'organizzazione umanitaria impegnata nella distribuzione di cibo in diverse regioni del mondo, tra cui l'America Latina, l'Asia e l'Africa.
+            Attraverso un approccio globale e collaborativo, cii impegnamo a fornire sostegno alimentare alle comunità più vulnerabili e affrontare l'insicurezza alimentare diffusa in queste regioni.
+            Per riuscire in questa impresa lavoriamo a stretto contatto con organizzazioni locali, governi e altre parti interessate per identificare le comunità più bisognose. Questa fase è cruciale per garantire che i bisogni alimentari delle persone siano adeguatamente valutati e che le risorse siano dirette alle aree più colpite.
          </p>
         </div>
       </div>
@@ -32,9 +33,9 @@
       <div class="riga-corpo">
         <div class="colonna-corpo">
           <p>
-            L'attività principale riguarda il ripristino delle foreste degradate e la creazione di nuovi habitat attraverso il piazzamento di alberi.
-            In molte regioni in cui lavoriamo, la deforestazione illegale, l'agricoltura intensiva e l'espansione urbana hanno causato la distruzione di vaste aree forestali.
-            Tum4World lavora in collaborazione con le comunità locali e le autorità competenti per piantare alberi indigeni e favorire la rigenerazione naturale delle foreste, contribuendo così alla conservazione degli ecosistemi vitali.
+            Ci impegnamo a raccogliere risorse alimentari attraverso donazioni da parte di aziende, individui e organizzazioni partner.
+            Quest'ultime, possono includere generi alimentari non deperibili, prodotti agricoli locali, cibo in scatola e altri alimenti essenziali.
+            Ci preoccupiamo anche di garantire che i prodotti alimentari raccolti siano sicuri, nutrienti e adatti alle esigenze culturali e alimentari delle comunità destinatarie.
          </p>
         </div>
       </div>
@@ -46,8 +47,9 @@
       <div class="riga-corpo">
         <div class="colonna-corpo">
           <p>
-            Infine, oltre al piazzamento di nuovi alberi, ci impegnamo anche nella sensibilizzazione e nell'educazione ambientale delle comunità coinvolte.
-            Attraverso programmi educativi, workshop e attività di sensibilizzazione, l'organizzazione promuove la consapevolezza ambientale alle popolazioni indigene.
+            Infine, siamo impegnati anche a fornire formazione ed educazione alimentare alle comunità coinvolte.
+            Questo può includere workshop sulla nutrizione, sulle pratiche agricole sostenibili e sulla gestione delle risorse alimentari.
+            L'obiettivo è quello di costruire capacità locali a lungo termine e promuovere l'autosufficienza delle comunità nel garantire la sicurezza alimentare.
          </p>
         </div>
       </div>

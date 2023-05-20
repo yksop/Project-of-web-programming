@@ -19,7 +19,7 @@
       <div class="riga-corpo">
         <div class="colonna-corpo">
           <p>
-            Siamo anche impegnati nell'aiutare gli sfollati in America Latina, Asia e Africa.
+            Siamo anche impegnati nell'aiutare gli sfollati nelle zone sopra citate.
             In queste regioni, conflitti armati, disastri naturali e altre crisi causano migliaia di persone costrette a lasciare le proprie case e ad affrontare situazioni di emergenza.
             Tum4World si impegna a fornire sostegno immediato agli sfollati, inclusa l'assistenza essenziale, la protezione e il supporto psicosociale.
          </p>
@@ -33,11 +33,10 @@
       <div class="riga-corpo">
         <div class="colonna-corpo">
           <p>
-            Siamo pronti ad intervenire in caso di emergenze umanitarie che causano lo sfollamento di persone, attraverso una risposta rapida ed efficace.
-            Forniamo assistenza immediata agli sfollati, garantendo loro cibo, acqua potabile, riparo, assistenza medica di base e servizi igienico-sanitari.
+            Siamo sempre pronti ad intervenire in caso di emergenze umanitarie che causano lo sfollamento di persone,
+            fornendo assistenza immediata agli sfollati, garantendo loro cibo, acqua potabile, riparo, assistenza medica di base e servizi igienico-sanitari.
             Questa assistenza di emergenza è vitale per salvaguardare la vita e la dignità delle persone coinvolte. 
-            Ciò include l'identificazione e la registrazione degli sfollati per facilitare l'accesso a servizi essenziali, nonché la promozione dei diritti umani e della protezione delle persone vulnerabili, come donne, bambini, anziani e persone con disabilità.
-            L'organizzazione lavora a stretto contatto con le autorità locali e altre organizzazioni per creare un ambiente sicuro per gli sfollati.
+            Svolgiamo anche l'identificazione e la registrazione gli sfollati per facilitare il riconoscimento tra le varie famiglie divise.
          </p>
         </div>
       </div>
