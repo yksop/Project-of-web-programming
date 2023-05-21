@@ -3,6 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/JSP pages/attivita.jsp" value="file://$PROJECT_DIR$/src/main/webapp/JSP pages" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/attività.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/chi-siamo.html" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/chi-siamo.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
@@ -13,6 +14,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/regConf.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/signIn.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/template.html" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/templates/barra_navigazione.jsp" value="file://$PROJECT_DIR$/src/main/webapp/templates" />
       </map>
     </option>
   </component>
