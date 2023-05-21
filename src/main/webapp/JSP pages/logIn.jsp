@@ -5,16 +5,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="icon" href="Immagini progetto/Logo_Tum4World.png" type="image/icontype">
-  <link rel="stylesheet" href="css/signIn_style.css">
-  <link rel="stylesheet" href="css/template_style.css">
+  <link rel="icon" href="../Immagini%20progetto/Logo_Tum4World.png" type="image/icontype">
+  <link rel="stylesheet" href="../css/signIn_style.css">
+  <link rel="stylesheet" href="../css/template_style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <title>Tum4World</title>
-  <script rel="script" src="JavaScript/changeCitations.js"></script>
+  <script rel="script" src="../JavaScript/changeCitations.js"></script>
 </head>
 
-<jsp:include page="templates/intestazione.jsp"></jsp:include>
-<jsp:include page="templates/barra_navigazione.jsp"></jsp:include>
+<jsp:include page="../templates/intestazione.jsp"></jsp:include>
+<jsp:include page="../templates/barra_navigazione.jsp"></jsp:include>
 
 <!--FORM PER LOGIN-->
 <div style="height:1200px; overflow-y: auto; z-index: 1;">
@@ -46,6 +46,6 @@
   </form>
 </div>
 
-<jsp:include page="templates/footer.jsp"></jsp:include>
+<jsp:include page="../templates/footer.jsp"></jsp:include>
 
 </html>

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Immagini progetto/logo.jpg" type="image/icontype">
-    <link rel="stylesheet" href="css/template_style.css">
+    <link rel="stylesheet" href="../css/template_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-    <script rel="script" src="JavaScript/changeCitations.js"></script>
+    <script rel="script" src="../JavaScript/changeCitations.js"></script>
     <title>Tum4World</title>
 </head>
 
-<jsp:include page="templates/intestazione.jsp"></jsp:include>
-<jsp:include page="templates/barra_navigazione.jsp"></jsp:include>
+<jsp:include page="../templates/intestazione.jsp"></jsp:include>
+<jsp:include page="../templates/barra_navigazione.jsp"></jsp:include>
 
 <div>
     <p>
@@ -29,10 +29,10 @@
         e questa città gli è rimasta nel cuore. Perciò, se sei interessato alla nostra missione e hai voglia di conoscerci dal vivo,
         vieni pure a trovarci in via della Riva a Tridentum!
     </p>
-    <img src="Immagini progetto/img1chisiamo.jpg">
-    <img src="Immagini progetto/img2chisiamo.webp">
+    <img src="../Immagini%20progetto/img1chisiamo.jpg">
+    <img src="../Immagini%20progetto/img2chisiamo.webp">
 </div>
 
-<jsp:include page="templates/footer.jsp"></jsp:include>
+<jsp:include page="../templates/footer.jsp"></jsp:include>
 
 </html>
