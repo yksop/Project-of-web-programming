@@ -79,7 +79,7 @@ button[type="reset"] {
 
 ul {
     list-style-type: circle; /* Tipo di marcatore */
-    color: rgb(116, 116, 245); /* Colore del marcatore */
+    color: black; /* Colore del marcatore */
     font-size: small; /* Dimensione del testo */
     margin-left: 20px; /* Margine sinistro */
 }
