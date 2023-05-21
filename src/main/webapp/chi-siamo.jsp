@@ -9,24 +9,8 @@
           rel="stylesheet">
     <title>Tum4World</title>
 </head>
-<body>
-<div class="intestazione">
-    <h1>TUM4WORLD</h1>
-</div>
-
-<div class="navigazione">
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Chi siamo</a></li>
-            <li><a href="#">Attività</a></li>
-            <li><a href="#">Contatti</a></li>
-            <li><a href="#">Sign in</a></li>
-            <li><a href="#">login</a></li>
-        </ul>
-    </nav>
-</div>
-
+<jsp:include page="templates/intestazione.jsp"></jsp:include>
+<jsp:include page="templates/barra_navigazione.jsp"></jsp:include>
 <div>
     <p>
         Nel 2016 il nostro fondatore Chris si trovava nella foresta amazzonica, quando tutto d'un tratto sentì un fortissimo
@@ -43,27 +27,8 @@
         e questa città gli è rimasta nel cuore. Perciò, se sei interessato alla nostra missione e hai voglia di conoscerci dal vivo,
         vieni pure a trovarci in via della Riva a Tridentum!
     </p>
-    <img src="img/img1chisiamo.jpg">
-    <img src="img/img2chisiamo.webp">
+    <img src="Immagini progetto/img1chisiamo.jpg">
+    <img src="Immagini progetto/img2chisiamo.webp">
 </div>
-
-<footer class="footer">
-    <div class="contenitore">
-        <div class="riga-footer">
-            <div class="colonna-footer">
-                <h4>Associazione</h4>
-                <ul>
-                    <li>Tum4World</li>
-                </ul>
-            </div>
-            <div class="colonna-footer">
-                <h4>Sede legale</h4>
-                <ul>
-                    <li>Via della Riva 02000 Trento, Italia</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
+<jsp:include page="templates/footer.jsp"></jsp:include>
 </html>

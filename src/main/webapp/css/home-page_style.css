@@ -1,0 +1,29 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* regole per i paragrafi*/
+
+#p1 {
+    position: relative;
+    top: 100px;
+}
+
+/* regole per le immagini*/
+
+#img1 {
+    float: left;
+    margin-right: fill;
+    size: auto;
+    padding-right: 10px;
+}
+
+#img2 {
+    float: right;
+    margin-left: auto;
+    size: auto;
+    padding-left: 10px;
+}

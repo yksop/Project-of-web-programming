@@ -1,13 +1,32 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Immagini progetto/Logo_Tum4World.png" type="image/icontype">
+    <link rel="stylesheet" href="css/template_style.css">
+    <link rel="stylesheet" href="css/home-page_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap"
+          rel="stylesheet">
+    <title>Tum4World</title>
 </head>
-<body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
-</body>
+<jsp:include page="templates/intestazione.jsp"></jsp:include>
+<jsp:include page="templates/barra_navigazione.jsp"></jsp:include>
+<div>
+    <img id="img1" alt="img1" src="Immagini progetto/Logo_Tum4World.png">
+    <p>
+        Ciao! Noi siamo Tum4World! Un'associazione non-profit che ha l'obiettivo di rendere il mondo un posto migliore. Siamo nati nel
+        2016 da un'idea del nostro fondatore Chris Formag, e da allora non abbiamo smesso di aiutare persone ed animali in giro per la Terra!
+        Ad oggi siamo attivi nelle zone del mondo meno fortunate, in particolare siamo presenti in Africa, Asia del Sud-est e nel centro America.
+        Siamo contenti che tu sia capitato sulla nostra pagine web oggi. Come puoi vedere, un menù per navigare all'interno delle pagine è
+        al tuo servizio, come anche la possibilità di loggarti/iscriverti se non lo hai ancora fatto. Speriamo vivamente che tu possa
+        trovare cio' che ti serve qua.
+    </p>
+    <img id="img2" alt="img2" src="Immagini progetto/immagine_homepage.jpg">
+    <p id="p1">
+        Se hai bisogno di parlare direttamente con noi, non esitare a contattarci, tutte le informazioni
+        di cui hai bisogno sono in fondo ad ogni pagina. Buona navigazione da parte di Tum4World!!!
+    </p>
+</div>
+<jsp:include page="templates/footer.jsp"></jsp:include>
 </html>
