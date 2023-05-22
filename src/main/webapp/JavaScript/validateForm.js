@@ -72,3 +72,4 @@ function controllaData(){
 function validate(){
     return(controllaPassword()&&controllaData());
 }
+

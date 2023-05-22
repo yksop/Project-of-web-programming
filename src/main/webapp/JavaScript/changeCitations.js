@@ -21,5 +21,5 @@ function getCitazioneCasuale() {
 getCitazioneCasuale();
 
 // Aggiorna la citazione ogni 20 secondi
-setInterval(getCitazioneCasuale, 20000);
+setInterval(getCitazioneCasuale, 2000);
 

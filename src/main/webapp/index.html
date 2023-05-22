@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+    <body>
+
+
+    <script>
+        //CODICE DI PROVA DO NOT TOUCH
+        // Codice JavaScript per inviare una richiesta alla servlet "HitCounter"
+        function inviaVisita(pagina) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/hitCounter?pagina=' + pagina, true);
+            xhr.send();
+        }
+
+        // Chiamata alla funzione inviaVisita() per tenere traccia delle visite quando la pagina viene caricata
+        window.onload = function() {
+            inviaVisita('index.html'); // Sostituisci 'nomePagina' con il nome effettivo della pagina corrente
+        };
+
+    </script>
+
+    </body>
+</html>

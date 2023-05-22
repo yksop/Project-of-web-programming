@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amministratore</title>
+        <link rel="stylesheet" href="css/amministratore.css">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="JavaScript/amministratore.js"></script>
+
+        <style>
+            .header {
+                width: auto;
+                height: 35vh;
+                background: url("Immagini progetto/Private/15.jpg") no-repeat center center;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+                position: relative;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <div class="header" id="img"></div>
+        <div class="title" >
+            <button class="logout-button" onclick="window.location.href='signIn.html'">Logout</button>
+            <h1>Bentornato!</h1>
+        </div>
+
+
+        <h2 class="sottotitolo">Operazioni Disponibili</h2>
+
+        <div class="box">
+
+            <div class="menu-button-cont">
+                <button id="UtentiRegistrati" onclick="getUtenti()">Utenti registrati</button>
+                <button id="Simpatizzanti" onclick="getSimpatizzanti()">Simpatizzanti</button>
+                <button id="Aderenti" onclick="getAderenti()" >Aderenti</button>
+                <button onclick="visualizzareVisiteTot()">Visite</button>
+                <button onclick="visualizzareVisite()">Visite per pagina</button>
+                <button id="Donazioni" onclick="getDonazioni()">Donazioni</button>
+            </div>
+
+            <div class="finestre">
+
+                <div id="utenti-data" class="content-container ">
+                    <div id="elencoUtentiContainer"></div>
+                    <button class="buttonB" onclick="goBack('utenti-data')">Indietro</button>
+                </div>
+
+                <div id="donation-data" class="content-container">
+                    <div id="donationContainer"></div>
+                    <button class="buttonB" onclick="goBack('donation-data')">Indietro</button>
+                </div>
+
+                <div id="totvisit-data" class="content-container ">
+                    <div id="totalVisitsContainer"></div>
+                    <button id="reset-button" class="buttonB" onclick="resetVisite()">Reset</button><br>
+                    <div id="reset-message"></div>
+                    <button class="buttonB" onclick="goBack('totvisit-data')">Indietro</button>
+                </div>
+
+                <div id="visit-data" class="content-container ">
+                    <div id="visitsByPageContainer"></div>
+                    <button class="buttonB" onclick="goBack('visit-data')">Indietro</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+            function getUtenti() {
+                hideContentContainers();
+                document.getElementById("utenti-data").style.display = 'block';
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                document.getElementById("elencoUtentiContainer").innerHTML = xmlhttp.responseText;
+            }
+            };
+                xmlhttp.open("GET", "/ElencoRegServlet", true);
+                xmlhttp.send();
+            }
+
+            function getSimpatizzanti() {
+                hideContentContainers();
+                document.getElementById("utenti-data").style.display = 'block';
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                document.getElementById("elencoUtentiContainer").innerHTML = xmlhttp.responseText;
+            }
+            };
+                xmlhttp.open("GET", "/ElencoRegServlet?type=simpatizzanti", true);
+                xmlhttp.send();
+            }
+
+            function getAderenti() {
+                hideContentContainers();
+                document.getElementById("utenti-data").style.display = 'block';
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    document.getElementById("elencoUtentiContainer").innerHTML = xmlhttp.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "/ElencoRegServlet?type=aderenti", true);
+                xmlhttp.send();
+            }
+
+            function getDonazioni() {
+                hideContentContainers();
+                var cont= document.getElementById("donation-data");
+                cont.style.display = 'block';
+                var dati=document.getElementById("donationContainer")
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "/DonazioniServlet", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // La richiesta è stata completata con successo
+                        var responseText = xhr.responseText;
+                        // Elaborare la risposta e creare il grafico
+                        dati.textContent=responseText;
+                        createChart(responseText);
+                    }
+                };
+                xhr.send();
+
+            }
+
+            function visualizzareVisiteTot() {
+                hideContentContainers();
+                document.getElementById("totvisit-data").style.display = 'block';
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/amministratore/visualizzareVisiteTot', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        document.getElementById('totalVisitsContainer').textContent = 'Visite totali: ' + response;
+                    }
+                };
+
+                xhr.send();
+            }
+
+            function resetVisite() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/amministratore/resetVisite', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var resetMessage = document.getElementById('reset-message');
+                        resetMessage.innerText = 'Visite resettate';
+                        resetMessage.style.display = 'block';
+                        setTimeout(function() {
+                            resetMessage.style.display = 'none';
+                        }, 3000);
+                    }
+                };
+                xhr.send();
+            }
+
+            function visualizzareVisite() {
+                hideContentContainers();
+                document.getElementById("visit-data").style.display = 'block';
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/amministratore/visualizzareVisite', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        var visitsData = [];
+
+                        for (var page in response) {
+                            if (response.hasOwnProperty(page)) {
+                                visitsData.push([page, response[page]]);
+                            }
+                        }
+
+                        renderChart(visitsData);
+                    }
+                };
+                xhr.send();
+            }
+
+            function renderChart(data) {
+                HighCharts.chart('visitsByPageContainer', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Visite per pagina'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        title: {
+                            text: 'Pagina'
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Visite'
+                        }
+                    },
+                    series: [{
+                        name: 'Visite',
+                        data: data
+                    }]
+                });
+            }
+
+            function goBack(button) {
+                const cancelData = document.getElementById(button);
+                cancelData.style.display = 'none';
+            }
+
+            function hideContentContainers() {
+                const contentContainers = document.querySelectorAll('.content-container');
+                contentContainers.forEach(function(container) {
+                    container.style.display = 'none';
+                });
+            }
+
+
+
+            // Funzione per creare il grafico utilizzando i dati della risposta
+            function createChart(responseText) {
+                // Elaborare la risposta e ottenere i dati delle donazioni
+                var donazioni = responseText.split("\n");//da aggiungere \n????????
+
+                // Creare l'array per le etichette dei mesi e l'array per i totali delle donazioni
+                var mesi = [];
+                var totaliDonazioni = [];
+
+                // Parsare i dati delle donazioni e popolare gli array delle etichette dei mesi e dei totali delle donazioni
+                for (var i = 0; i < donazioni.length; i++) {
+                    var donazione = donazioni[i];
+                    var parts = donazione.split(","); //divide in mese e totdonazione
+                    var mese = parts[0].split(":")[1].trim(); //prende mese
+                    var totaleDonazioni = parseFloat(parts[1].split(":")[1].trim()); //prende totdonazioni
+
+                    mesi.push(mese);
+                    totaliDonazioni.push(totaleDonazioni);
+                }
+
+                // Utilizzare gli array delle etichette dei mesi e dei totali delle donazioni per creare il grafico con Highcharts
+                Highcharts.chart('donationContainer', {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Donazioni Mensili'
+                    },
+                    xAxis: {
+                        categories: mesi,
+                        title: {
+                            text: 'Mese'
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Totale Donazioni'
+                        }
+                    },
+                    series: [{
+                        name: 'Donazioni',
+                        data: totaliDonazioni
+                    }]
+                });
+            }
+
+        </script>
+    </body>
+</html>

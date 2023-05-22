@@ -26,13 +26,23 @@ label {
 }
 
 
+
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background-color: #ffa500;
+}
+
+
+input [type="date"],
+input [type="tel"],
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 button[type="submit"] {
@@ -43,7 +53,7 @@ button[type="submit"] {
     background-color: #4caf50;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 40px;
     cursor: pointer;
     margin-bottom: 10px;
 }
@@ -56,7 +66,7 @@ button[type="reset"] {
     background-color: #dd420e;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 40px;
     cursor: pointer;
     margin-bottom: 300px;
 }
@@ -79,7 +89,7 @@ button[type="reset"] {
 
 ul {
     list-style-type: circle; /* Tipo di marcatore */
-    color: black; /* Colore del marcatore */
+    color: rgb(116, 116, 245); /* Colore del marcatore */
     font-size: small; /* Dimensione del testo */
     margin-left: 20px; /* Margine sinistro */
 }

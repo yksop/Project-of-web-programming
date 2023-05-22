@@ -3,7 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <welcome-file-list>
-        <welcome-file>signIn.html</welcome-file>
+        <welcome-file>SignIn.html</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>DonazioniServlet</servlet-name>
+        <servlet-class>com.progetto_web.DonazioniServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DonazioniServlet</servlet-name>
+        <url-pattern>/DonazioniServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RegServlet</servlet-name>
+        <servlet-class>com.progetto_web.RegServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegServlet</servlet-name>
+        <url-pattern>/RegServlet</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
