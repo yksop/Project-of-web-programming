@@ -20,7 +20,7 @@
     </div>
     <div>
         <p><b><i>&Egrave; obbligatorio compilare tutti i campi contrassegnati con *</i></b></p>
-        <form action="contattiValidation.jsp" onsubmit="return validate();" id="form" name="personalInfo" method="POST"><br>
+        <form action="http://localhost:8080/progetto_programmazione_web_war_exploded/InvioEmail" onsubmit="return validate();" id="form" name="personalInfo" method="post"><br>
             <div>
                 <p class="istruzioni">Inserisci il tuo nome <b>*</b></p>
                 <label>Nome:</label>
