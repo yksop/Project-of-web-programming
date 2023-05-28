@@ -21,18 +21,18 @@
 
   <h1 style="color: #0e2ab7">LOGIN</h1>
   <p><b style="color: #f60505; font-size: 11px"><i>&Egrave; obbligatorio compilare tutti i campi richiesti</i></b></p>
-  <form action="regConf.jsp" onsubmit="return validate();" id="form" name="personalInfo" method="POST">
+  <form action="regConf.jsp" onsubmit="return validateFormRegistrazione();" id="form" name="personalInfo" method="POST">
       <br>
     <div class="form-group">
       <p class="istruzioni">Inserisci il tuo username</p>
       <label for="Username">Username:</label>
-      <input type="text" id="Username" name="Username" placeholder="Username" required>
+      <input type="text" id="Username" name="Username" placeholder="Username">
     </div>
     <br>
     <div class="form-group">
       <p class="istruzioni">Inserisci la tua password</p>
       <label for="Password">Password:</label>
-      <input type="password" id ="Password" name="Password" placeholder="Password" required>
+      <input type="password" id ="Password" name="Password" placeholder="Password">
     </div>
 
     <div id="errorMessage" style="display: none; color: red; padding: 10px;"></div>

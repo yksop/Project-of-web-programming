@@ -20,29 +20,29 @@
     </div>
     <div>
         <p><b><i>&Egrave; obbligatorio compilare tutti i campi contrassegnati con *</i></b></p>
-        <form action="contattiValidation.jsp" onsubmit="return validate();" id="form" name="personalInfo" method="POST"><br>
+        <form action="" onsubmit="return validateContatti();" id="form" name="personalInfo" method="POST"><br>
             <div>
-                <p class="istruzioni">Inserisci il tuo nome <b>*</b></p>
+                <p class="istruzioni">Inserisci il tuo nome</p>
                 <label>Nome:</label>
-                <input type="text" id="Nome" name="Nome" placeholder="Il tuo nome" required>
+                <input type="text" id="Nome" name="Nome" placeholder="Il tuo nome">
             </div>
 
             <div>
-                <p class="istruzioni">Inserisci il tuo cognnome <b>*</b></p>
+                <p class="istruzioni">Inserisci il tuo cognome</p>
                 <label>Cognome:</label>
-                <input type="text" id="Cognome" name="Cognome" placeholder="Il tuo cognome" required>
+                <input type="text" id="Cognome" name="Cognome" placeholder="Il tuo cognome">
             </div>
 
             <div>
                 <p class="istruzioni">Inserisci la tua E-mail <b>*</b></p>
                 <label>E-mail:</label>
-                <input type="text" id="Email" name="Email" placeholder="La tua E-mail" required>
+                <input type="text" id="Email" name="Email" placeholder="La tua E-mail">
             </div>
 
             <div>
-                <p class="istruzioni">Qual'è il motivo per cui vuoi metterti in contatto con noi? <b>*</b></p>
+                <p class="istruzioni">Qual'è il motivo per cui vuoi metterti in contatto con noi?</p>
                 <div>
-                    <input type="radio" id="curiosità" name="Choice" value="Curiosità" required>
+                    <input type="radio" id="curiosità" name="Choice" value="Curiosità">
                     <label>Curiosità</label>
                     <br>
                     <input type="radio" id="richiestainfo" name="Choice" value="Richiesta informazioni">

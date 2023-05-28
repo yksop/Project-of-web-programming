@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <title>Tum4World</title>
   <script rel="script" src="../JavaScript/changeCitations.js"></script>
-  <script rel="script" src="../JavaScript/validateForm.js"></script>
+  <script rel="script" src="../JavaScript/validateFormRegistrazione.js"></script>
 </head>
 
 <jsp:include page="../templates/intestazione.jsp"></jsp:include>
@@ -25,33 +25,33 @@
         <form action="regConf.jsp" onsubmit="return validate();" id="form" name="personalInfo" method="POST">
          <div class="form-group">
             <label for="Name">Nome:</label>
-            <input type="text" id="Name" name="Name" placeholder="Nome" required>
+            <input type="text" id="Name" name="Name" placeholder="Nome">
           </div>
 
           <div class="form-group">
             <label for="LastName">Cognome:</label>
-            <input type="text" id ="LastName" name="LastName" placeholder="Cognome" required>
+            <input type="text" id ="LastName" name="LastName" placeholder="Cognome">
           </div>
 
           <div class="form-group">
             <label for="Date">Data di nascita:</label>
-            <input type="date" id="Date" name="Date" placeholder="Data di nascita" required>
+            <input type="date" id="Date" name="Date" placeholder="Data di nascita">
           </div>
 
           <div class="form-group">
             <label for="Email">Email:</label>
-            <input type="email" id="Email" name="Email" placeholder="Email" required>
+            <input type="email" id="Email" name="Email" placeholder="Email">
           </div>
 
           <div class="form-group">
             <label for="Tel">Numero di telefono:</label>
-            <input type="tel" id ="Tel" name="Tel" placeholder="Telefono" required>
+            <input type="tel" id ="Tel" name="Tel" placeholder="Telefono">
           </div>
 
           <div class="form-group">
             <p class="istruzioni">Scegli se vuoi essere simpatizzante o aderente</p>
             <div class="radio-group">
-              <input type="radio" id="simp" name="Choice" value="Simpatizzante" required>
+              <input type="radio" id="simp" name="Choice" value="Simpatizzante">
               <label for="simp">Simpatizzante</label>
               <br>
               <input type="radio" id="aderente" name="Choice" value="Aderente" >
@@ -62,7 +62,7 @@
           <div class="form-group">
             <p class="istruzioni">Scegli uno username</p>
             <label for="Username">Username:</label>
-            <input type="text" id="Username" name="Username" placeholder="Username" required>
+            <input type="text" id="Username" name="Username" placeholder="Username">
           </div>
 
          <div class="form-group">
@@ -73,13 +73,13 @@
               <li>deve contenere almeno un carattere numerico, uno maiuscolo, e uno tra i caratteri speciali '$','!','?'</li>
             </ul>
             <label for="Password">Password:</label>
-            <input type="password" id ="Password" name="Password" placeholder="Password" required>
+            <input type="password" id ="Password" name="Password" placeholder="Password">
           </div>
 
           <div class="form-group">
             <p class="istruzioni">Conferma la password</p>
             <label for="ConfPass">Password:</label>
-            <input type="password" id ="ConfPass" name="ConfPass" placeholder="Password" required>
+            <input type="password" id ="ConfPass" name="ConfPass" placeholder="Password">
           </div>
 
           <div id="errorMessage" style="display: none; color: red; padding: 10px;"></div>
