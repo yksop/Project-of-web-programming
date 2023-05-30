@@ -54,6 +54,8 @@
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.87" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:8.5.87" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyclient:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyshared:10.15.2.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
