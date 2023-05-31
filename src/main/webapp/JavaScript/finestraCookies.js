@@ -1,10 +1,8 @@
-function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
+function setCookie(name, value) {
+    var expires;
+    var date = new Date();
+    date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
     document.cookie = name + "=" + value + expires + "; path=/";
 }
 
@@ -24,7 +22,7 @@ function getCookie(name) {
 function showCookieInfo() {
     var cookieInfoShown = getCookie("cookieInfoShown");
     if (!cookieInfoShown) {
-        setCookie("cookieInfoShown", true, 1); // scade dopo un giorno
+        setCookie("cookieInfoShown", true);
     }
 }
 

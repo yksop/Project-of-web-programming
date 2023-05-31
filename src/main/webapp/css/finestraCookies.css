@@ -13,7 +13,7 @@ body{
     background-color: #fff8dc;
     border: 1px solid #ffa500;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 0;
+    z-index: 1;
     width: 350px;
     animation: slideUp 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
     opacity: 0;

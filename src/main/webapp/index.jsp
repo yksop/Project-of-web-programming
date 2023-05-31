@@ -6,8 +6,10 @@
     <link rel="icon" href="Immagini_progetto/Logo_Tum4World.png" type="image/icontype">
     <link rel="stylesheet" href="css/home-page.css">
     <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/finestraCookies.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <script rel="script" src="JavaScript/changeCitations.js"></script>
+    <script src="JavaScript/finestraCookies.js"></script>
     <title>Tum4World</title>
 </head>
 <jsp:include page="templates/intestazione.jsp"/>
@@ -32,5 +34,6 @@
         </a>
     </p>
 </div>
+<jsp:include page="JSP_pages/provafinestra.jsp"/>
 <jsp:include page="templates/footer.jsp"/>
 </html>
