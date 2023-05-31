@@ -2,9 +2,60 @@ function displayErrorMessage(message) {
     const errorMessageElement = document.getElementById("errorMessage");
     errorMessageElement.textContent = message;
     errorMessageElement.style.display = "block";
-    //alert(message);
 }
 
+function controlEmpty(){
+    const name=document.getElementById("Name").value;
+    const lastname=document.getElementById("LastName").value;
+    const date=document.getElementById("Date").value;
+    const email=document.getElementById("Email").value;
+    const tel=document.getElementById("Tel").value;
+    const choice=document.getElementsByName("Choice");
+    const boxname=document.getElementById("Name");
+    const boxlastname=document.getElementById("LastName");
+    const boxdate=document.getElementById("Date");
+    const boxemail=document.getElementById("Email");
+    const boxtel=document.getElementById("Tel");
+    const boxchoice=document.getElementsByName("Choice");
+
+    if(name===""){
+        displayErrorMessage("inserire il nome");
+        boxname.focus();
+        boxname.style.border= "2px solid red";
+        return false;
+    }
+
+    if(lastname===""){
+        displayErrorMessage("inserire il cognome");
+        boxlastname.focus();
+        boxlastname.style.border= "2px solid red";
+        return false;
+    }
+
+    if(date===""){
+        displayErrorMessage("inserire la data");
+        boxdate.focus();
+        boxdate.style.border= "2px solid red";
+        return false;
+    }
+
+    if(tel===""){
+        displayErrorMessage("inserire il numero di telefono");
+        boxtel.focus();
+        boxtel.style.border= "2px solid red";
+        return false;
+    }
+
+    if(email===""){
+        displayErrorMessage("inserire l'email");
+        boxemail.focus();
+        boxemail.style.border= "2px solid red";
+        return false;
+    }
+
+    else{return true}
+
+}
 function controllaPassword() {
     const password=document.getElementById("Password").value;
     const conferma=document.getElementById("ConfPass").value;
@@ -12,9 +63,8 @@ function controllaPassword() {
     const confpassbox=document.getElementById("ConfPass");
     confpassbox.style.border= "2px solid white";
     passbox.style.border= "2px solid white";
-
-    if(password === "") {
-        displayErrorMessage("Immetti la password");
+    if(password===""){
+        displayErrorMessage("inserire la password");
         passbox.focus();
         passbox.style.border= "2px solid red";
         return false;
@@ -56,12 +106,19 @@ function controllaPassword() {
         return false;
     }
 
-        if(password !== conferma){
-            displayErrorMessage("La password confermata è diversa da quella scelta, controllare.");
-            confpassbox.focus();
-            confpassbox.style.border= "2px solid red";
-            return false;
-        }
+    if(conferma===""){
+        displayErrorMessage("inserire la conferma password");
+        confpassbox.focus();
+        confpassbox.style.border= "2px solid red";
+        return false;
+    }
+
+    if(password !== conferma){
+        displayErrorMessage("La password confermata è diversa da quella scelta, controllare.");
+        confpassbox.focus();
+        confpassbox.style.border= "2px solid red";
+        return false;
+    }
     // La password ha superato tutti i controlli
     else {return true}
 }
@@ -71,13 +128,19 @@ function controllaData(){
     const dataInserita=new Date(data);
     const dataAttuale=new Date();
     const diff = dataAttuale.getFullYear() - dataInserita.getFullYear();
-
     if (diff < 18) {
         displayErrorMessage("La registrazione è consentita solo a utenti maggiorenni.\nCi scusiamo per il disagio.");
         return false;
     }
 }
 
-function validateFormRegistrazione(){
-    return(controllaData()&&controllaPassword());
+function validate(){
+    if(controlEmpty()){
+        if(controllaPassword()){
+            return controllaData();
+        }
+    }
+    return false;
 }
+
+

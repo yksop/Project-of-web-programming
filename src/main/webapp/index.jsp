@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Immagini progetto/Logo_Tum4World.png" type="image/icontype">
-    <link rel="stylesheet" href="css/home-page_style.css">
-    <link rel="stylesheet" href="css/template_style.css">
+    <link rel="icon" href="Immagini_progetto/Logo_Tum4World.png" type="image/icontype">
+    <link rel="stylesheet" href="css/home-page.css">
+    <link rel="stylesheet" href="css/template.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <script rel="script" src="JavaScript/changeCitations.js"></script>
     <title>Tum4World</title>
@@ -25,16 +25,12 @@
     <img id="img2" alt="img2" src="Immagini progetto/immagine_homepage.jpg">
     <p id="p1">
         Se hai bisogno di parlare direttamente con noi, non esitare a contattarci, tutte le informazioni
-        di cui hai bisogno sono in fondo ad ogni pagina. Buona navigazione da parte di Tum4World!!!
+        di cui hai bisogno sono in fondo ad ogni pagina. Buona navigazione da parte di Tum4World!!!<br><br>
+        Qui puoi scaricare il nostro volantino informativo:<br>
+        <a id="bottoneVolantino" href = "Immagini progetto/volantino.pdf" Download = "Volantino">
+            <button type = "button"> Scarica il volantino </button>
+        </a>
     </p>
-    <div id="divVolantino">
-        <p>
-            Qui puoi scaricare il nostro volantino informativo:<br>
-            <a id="bottoneVolantino" href = "Immagini%20progetto/volantino.pdf" Download = "Volantino">
-                <button type = "button"> Scarica il volantino </button>
-            </a>
-        </p>
-    </div>
 </div>
 <jsp:include page="templates/footer.jsp"/>
 </html>

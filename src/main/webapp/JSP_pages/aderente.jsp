@@ -74,7 +74,7 @@
 
 
         <div id="cancel-data" class="content-container ">
-            <p style=" font-family: 'Arial'; font-size: 20px; color: orangered">Sei sicuro di voler cancellare l'iscrizione?</p>
+            <p style="font-family: 'Arial'; font-size: 20px; color: orangered">Sei sicuro di voler cancellare l'iscrizione?</p>
             <div class="confirm-buttons">
                 <button class="buttonB confButton" onclick="cancellaIscrizione()">Conferma</button>
                 <button class="buttonB" onclick="goBack('cancel-data')">Indietro</button>
