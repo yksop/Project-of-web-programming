@@ -43,7 +43,7 @@ h1 {
     color: #ffffff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 40px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -61,7 +61,7 @@ h1 {
     color: #ffffff;
     padding: 20px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 40px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     width: 200px;
@@ -111,6 +111,7 @@ h1 {
     position: center;
     align-self: center;
     margin: 10px;
+    border-radius: 40px;
 
 }
 
@@ -156,12 +157,12 @@ h1 {
     background-color: cadetblue;
     color: #fff;
     border: none;
-    border-radius: 4px;
     height: 40px;
     width: 120px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     align-content: center;
+    border-radius: 40px;
 }
 
 .buttonB:hover {
@@ -177,6 +178,7 @@ h1 {
 .confButton{
     background-color: lightseagreen;
     margin-left: 40px;
+    border-radius: 40px;
 }
 
 

@@ -25,7 +25,7 @@
 
             var logoutButton = document.querySelector('.logout-button');
             logoutButton.addEventListener('click', function() {
-                window.location.href = 'signIn.html';
+                window.location.href = 'signIn.jsp';
             });
 
             var profileButton = document.querySelector('.profile-button');
@@ -59,7 +59,7 @@
             confirmButton.addEventListener('click', function() {
                 confirmationMessage.textContent = 'Iscrizione cancellata';
                 setTimeout(function() {
-                    window.location.href = 'signIn.html';
+                    window.location.href = 'signIn.jsp';
                 }, 3000);
             });
 

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <title>Tum4World</title>
   <script rel="script" src="../JavaScript/changeCitations.js"></script>
+  <script rel="script" src="../JavaScript/validateFormLogIn.js"></script>
 </head>
 
 <jsp:include page="../templates/intestazione.jsp"></jsp:include>
@@ -20,8 +21,10 @@
 <div style="height:1200px; overflow-y: auto; z-index: 1;">
 
   <h1 style="color: #0e2ab7">LOGIN</h1>
+
+<div id="formContainer" style="display: none">
   <p><b style="color: #f60505; font-size: 11px"><i>&Egrave; obbligatorio compilare tutti i campi richiesti</i></b></p>
-  <form action="regConf.jsp" onsubmit="return validateFormRegistrazione();" id="form" name="personalInfo" method="POST">
+  <form action="../LoginServlet" onsubmit="return validate();" id="form" name="personalInfo" method="POST">
       <br>
     <div class="form-group">
       <p class="istruzioni">Inserisci il tuo username</p>
@@ -44,8 +47,20 @@
     </div>
 
   </form>
+
 </div>
 
+  <div id="fast-way" style="display: none" >
+  <form action="../LoginServlet">
+    <div>
+      <button type=submit name="Send" value="Login" style="margin: 50px">Login</button>
+    </div>
+  </form>
+  </div>
+
+</div>
+
+<jsp:include page="../templates/mostraCitazioni.jsp"/>
 <jsp:include page="../templates/footer.jsp"></jsp:include>
 
 </html>

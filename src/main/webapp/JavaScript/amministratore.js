@@ -1,7 +1,7 @@
 
-        var images = ["Immagini progetto/Private/12.jpg", "Immagini progetto/Private/15.jpg", "Immagini progetto/Private/22.jpg"
-                        , "Immagini progetto/Private/27.jpg", "Immagini progetto/Private/28.jpg", "Immagini progetto/Private/32.jpg"
-                        , "Immagini progetto/Private/33.jpg"];
+        var images = ["../Immagini progetto/Private/12.jpg", "../Immagini progetto/Private/15.jpg", "../Immagini progetto/Private/22.jpg"
+                        , "../Immagini progetto/Private/27.jpg", "../Immagini progetto/Private/28.jpg", "../Immagini progetto/Private/32.jpg"
+                        , "../Immagini progetto/Private/33.jpg"];
         var currentImage = 0;
 
         function changeImage() {

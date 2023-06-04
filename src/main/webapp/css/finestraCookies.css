@@ -2,10 +2,12 @@ body{
     overflow: hidden;
 }
 
+
 #cookie-info {
     position: absolute;
     bottom: -100px;
-    right: 20px;
+    left: 10px;
+    margin-left: 10px;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
