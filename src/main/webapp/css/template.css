@@ -20,7 +20,7 @@
 }
 
 body {
-  height: 100vh;
+  height: auto
 }
 
 /* regole per il design della barra di navigazione */
@@ -53,7 +53,9 @@ nav ul li a {
   box-shadow: 5px 5px 42px -10px #000000;
   position: relative;
   height: 30%;
+  z-index: 0;
   bottom: 0;
+
 }
 
 .contenitore {
@@ -70,6 +72,7 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 .colonna-footer {
@@ -85,3 +88,55 @@ nav ul li a {
 .colonna-footer li {
   font-size: 13px;
 }
+
+
+#citazione {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  color: whitesmoke;
+  width: auto; /* Larghezza desiderata */
+  height: 90px; /* Altezza desiderata */
+  /*border: 1px solid black;*/
+  word-wrap: break-word;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  left: 50%; /* Centra il div rispetto alla finestra */
+  transform: translateX(-50%); /* Centra il div rispetto alla finestra */
+  white-space: pre-line;
+  z-index: 3;
+}
+
+
+.buttonB {
+  margin: 5px;
+  position: center;
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: cadetblue;
+  color: #fff;
+  border: none;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  align-content: center;
+  border-radius: 40px;
+}
+
+.buttonB:hover {
+  background-color: cornflowerblue;
+  transform: scale(1.1);
+}
+
+.buttonB:active {
+  background-color: #333;
+  transform: scale(0.9);
+}
+
+
+
+

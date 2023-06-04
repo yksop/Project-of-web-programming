@@ -1,7 +1,7 @@
-var images = ["Immagini progetto/Private/11v.jpg", "Immagini progetto/Private/14v.jpg", "Immagini progetto/Private/16v.jpg"
-    , "Immagini progetto/Private/17v.jpg", "Immagini progetto/Private/18v.jpg", "Immagini progetto/Private/19v.jpg"
-    , "Immagini progetto/Private/20v.jpg", "Immagini progetto/Private/21v.jpg", "Immagini progetto/Private/23v.jpg", "Immagini progetto/Private/24v.jpg",
-    "Immagini progetto/Private/26v.jpg", "Immagini progetto/Private/29v.jpg", "Immagini progetto/Private/30v.jpg", "Immagini progetto/Private/31v.jpg"];
+var images = ["../Immagini progetto/Private/14v.jpg", "../Immagini progetto/Private/16v.jpg"
+    , "../Immagini progetto/Private/17v.jpg", "../Immagini progetto/Private/18v.jpg", "../Immagini progetto/Private/19v.jpg"
+    , "../Immagini progetto/Private/20v.jpg", "../Immagini progetto/Private/21v.jpg", "../Immagini progetto/Private/23v.jpg", "../Immagini progetto/Private/24v.jpg",
+    "../Immagini progetto/Private/26v.jpg","../Immagini progetto/Private/11v.jpg",  "../Immagini progetto/Private/29v.jpg", "../Immagini progetto/Private/30v.jpg", "../Immagini progetto/Private/31v.jpg"];
 var currentImage = 0;
 
 function changeImage() {

@@ -8,7 +8,10 @@
       <li><a href="${pageContext.request.contextPath}/JSP_pages/attivita.jsp">Attività</a></li>
       <li><a href="${pageContext.request.contextPath}/JSP_pages/contatti.jsp">Contatti</a></li>
       <li><a href="${pageContext.request.contextPath}/JSP_pages/signIn.jsp">Sign in</a></li>
-      <li><a href="${pageContext.request.contextPath}/JSP_pages/logIn.jsp">login</a></li>
+      <li><a href="${pageContext.request.contextPath}/JSP_pages/logIn.jsp">Login</a></li>
+      <li><a href="${pageContext.request.contextPath}/JSP_pages/aderente.jsp">aderente</a></li>
+      <li><a href="${pageContext.request.contextPath}/JSP_pages/simpatizzante.jsp">simpatizzante</a></li>
+      <li><a href="${pageContext.request.contextPath}/JSP_pages/amministratore.jsp">amministratore</a></li>
     </ul>
   </nav>
 </div>

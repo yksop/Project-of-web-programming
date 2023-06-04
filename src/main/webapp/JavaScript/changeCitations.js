@@ -5,6 +5,7 @@ function getCitazioneCasuale() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log("entrato");
             var data = JSON.parse(xhr.responseText);
             var citazioni = data.citazioni;
             var indice = Math.floor(Math.random() * citazioni.length);
@@ -13,7 +14,7 @@ function getCitazioneCasuale() {
             citazioneDiv.innerHTML = citazione;
         }
     };
-    xhr.open("GET", "DataJSON/citazioni.json", true);
+    xhr.open("GET", "../DataJSON/citazioni.json", true);
     xhr.send();
 }
 
@@ -21,5 +22,5 @@ function getCitazioneCasuale() {
 getCitazioneCasuale();
 
 // Aggiorna la citazione ogni 20 secondi
-setInterval(getCitazioneCasuale, 20000);
+setInterval(getCitazioneCasuale, 2000);
 

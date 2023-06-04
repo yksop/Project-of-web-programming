@@ -15,12 +15,12 @@ DA INSERIRE LA DIV PARENT CONTAINER E I DUE LINK AL CSS E JS IN OGNI PAGINA-->
 
 <!--COOKIES-->
 <div id="parent-container">
-<div id="cookie-info" class="show">
-  <div style="margin-top: 10px; margin-bottom: 10px">
+<div id="cookie-info" class="show" style="margin-right: 75%">
+  <div style="margin-top: 10px; margin-bottom: 10px;">
     Questo sito utilizza i cookie per migliorare la tua esperienza utente.<br>
-    Accettando i cookie, acconsenti all'utilizzo dei cookie in conformità alla nostra politica sulla privacy.
+    Accettando i cookie, acconsenti all'utilizzo dei cookie in conformit&agrave; alla nostra politica sulla privacy.
   </div>
-  <a href="cookiesPolicy.jsp" target="_blank" >Politica sui cookie</a>
+  <a href="${pageContext.request.contextPath}/JSP_pages/cookiesPolicy.jsp" target="_blank" >Politica sui cookie</a>
   <br>
   <button class="button accept" onclick="acceptCookies()">Accetta</button>
   <button class="button reject" onclick="rejectCookies()">Rifiuta</button>

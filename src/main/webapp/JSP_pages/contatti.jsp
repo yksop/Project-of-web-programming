@@ -98,6 +98,7 @@
             }
         </style>
         <link rel="stylesheet" href="../css/template.css">
+        <script rel="script" src="../JavaScript/changeCitations.js"></script>
         <jsp:include page="../templates/intestazione.jsp"></jsp:include>
         <jsp:include page="../templates/barra_navigazione.jsp"></jsp:include>
     </head>
@@ -134,6 +135,7 @@
         </script>
 
 
-    </body>
+    <jsp:include page="../templates/mostraCitazioni.jsp"/>
     <jsp:include page="../templates/footer.jsp"></jsp:include>
+    </body>
 </html>

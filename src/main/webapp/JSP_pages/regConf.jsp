@@ -10,7 +10,7 @@
   <script rel="script" src="../JavaScript/changeCitations.js"></script>
   <title>Tum4World</title>
 </head>
-
+<body>
 <jsp:include page="../templates/intestazione.jsp"></jsp:include>
 <jsp:include page="../templates/barra_navigazione.jsp"></jsp:include>
 
@@ -20,7 +20,7 @@
     <h2 class="slide-in">Benvenuto in Tum4World!</h2>
   </div>
 </div>
-
+<jsp:include page="../templates/mostraCitazioni.jsp"/>
 <jsp:include page="../templates/footer.jsp"></jsp:include>
-
+</body>
 </html>
