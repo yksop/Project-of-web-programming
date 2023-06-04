@@ -1,19 +1,17 @@
 package Controllers;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.*;
+
 @WebServlet(name = "RegServlet", value = "/RegServlet")
 public class RegServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:derby://localhost:1527/WEB;create=true";
+
+    private static final String DB_URL = "jdbc:derby://localhost:1527/WEB";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -27,29 +25,34 @@ public class RegServlet extends HttpServlet {
         String password = request.getParameter("Password");
 
         try {
-            if (checkExistingUsername(username)) {
-                // Reindirizza alla pagina di signIn
-                request.setAttribute("errorMessage", "2: Username già presente. Si prega di sceglierne un altro.");
-                response.sendRedirect("SignIn.html");
-                return;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-           response.sendRedirect("SignIn.html");
-            return;
-        }
-
-
-        try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 
+        try {
+            if (checkExistingUsername(username)) {
 
-        try (Connection connection = DriverManager.getConnection(DB_URL)) {
+                // Reindirizza alla pagina di signIn
+                request.setAttribute("errorMessage", "2: Username già presente. Si prega di sceglierne un altro.");
+                response.sendRedirect("./JSP_pages/signIn.jsp");
+                System.out.println("errore 1");
+                //return;
+            }
+
+        }
+        catch (SQLException e) {
+
+            e.printStackTrace();
+           response.sendRedirect("./JSP_pages/signIn.jsp");
+            return;
+        }
+
+
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL);
             // Inserisci i dati dell'utente nel database
-            String insertQuery = "INSERT INTO Users (Name, Lastname, Dateofbirth, Email, Phonenumber, RegistrationType, Username, Password) "
+            String insertQuery = "INSERT INTO Users (FirstName, Lastname, Dateofbirth, Email, Phonenumber, RegistrationType, Username, Password) "
                                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
                 statement.setString(1, name);
@@ -65,13 +68,13 @@ public class RegServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("problemi conn database");
-           response.sendRedirect("SignIn.html");
+            System.out.println("problemi con database");
+           response.sendRedirect("./JSP_pages/signIn.jsp");
             return;
         }
 
         // Reindirizza alla pagina regConf
-        response.sendRedirect("regConf.html");
+        response.sendRedirect("./JSP_pages/regConf.jsp");
     }
     private boolean checkExistingUsername(String username) throws SQLException {
         String query = "SELECT COUNT(*) FROM Users WHERE Username = ?";

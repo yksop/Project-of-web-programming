@@ -1,18 +1,14 @@
 package Controllers;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+
 @WebServlet(name = "ElencoRegServlet", value = "/ElencoRegServlet")
 public class ElencoRegServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +22,7 @@ public class ElencoRegServlet extends HttpServlet {
         try {
             // Connessione al database Derby
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/WEB");
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/WEB;create=true");
 
             stmt = conn.createStatement();
 
