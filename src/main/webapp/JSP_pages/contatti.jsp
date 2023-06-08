@@ -105,10 +105,12 @@
     <body>
         <h1>Contatti</h1>
         <h2>Indirizzo mail: tum4world@nessunonoluogonoesiste.com<br>Numero di telefono: 1234543210</h2>
-        <form action="invioConfermatoPaginaContatti.jsp" method="post">
+        <form action="../InvioEmail" method="post">
             <br>
-            <label for="nomeCognome">Nome e Cognome:</label>
-            <input type="text" id="nomeCognome" name="nomeCognome"><br><br>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br>
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome"><br><br>
 
             <label for="email">Indirizzo Email:</label>
             <input type="email" id="email" name="email"><br><br>
@@ -116,9 +118,9 @@
             <label for="motivo">Motivo di Contatto:</label>
             <select id="motivo" name="motivo">
                 <option value="" disabled selected></option>
-                <option value="opzione1">collaborazione</option>
-                <option value="opzione2">domanda su attivit&agrave;</option>
-                <option value="opzione3">informazioni</option>
+                <option value="collaborazione">collaborazione</option>
+                <option value="domanda su attività">domanda su attivit&agrave;</option>
+                <option value="informazioni">informazioni</option>
                 <option value="altro">Altro</option>
             </select><br><br>
 
@@ -129,10 +131,6 @@
             <input type="reset" value="Reset">
             </div>
         </form>
-
-        <script>
-          //SMTP FITTIZIA E INVIO A MAIL tum4world@nessunonoluogonoesiste.com
-        </script>
 
 
     <jsp:include page="../templates/mostraCitazioni.jsp"/>

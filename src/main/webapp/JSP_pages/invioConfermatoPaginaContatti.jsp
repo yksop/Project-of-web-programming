@@ -1,109 +1,142 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Pagina di Conferma</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Immagini progetto/logo.jpg" type="image/icontype">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">    <title>Tum4World</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* regole per il design dell'intestazione */
+
+        .intestazione {
+            background-color: #5B9BE1;
+            padding: 2%;
+            box-shadow: 5px 5px 15px -10px #000000;
+        }
+
+        .intestazione h1 {
+            font-size: 40px;
+            font-weight: 600;
             text-align: center;
-            background-color: #f7f7f7;
-
         }
 
-        h1 {
-            font-size: 38px;
-            color: #333;
-            margin: 10px;
-            color: orange;
+        /* regole per il design della barra di navigazione */
 
-        }
-
-        p {
-            font-size: 20px;
-            color: #666;
-            margin: 10px;
-
-        }
-        .confMessage{
-            margin: 10%;
-            display: block;
-            justify-content: center;
+        .navigazione {
+            display: flex;
             align-items: center;
-            height: auto;
-            align-self: center;
-            padding: 20px;
-            border-radius: 30px;
-            animation: slideUp 1s ease-in;
+            justify-content: center;
+            padding-top: 15px;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
-        @keyframes slideUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+        nav ul li a {
+            color: #5B9BE1;
+            text-decoration: none;
         }
 
+        /* regole per il design del footer */
 
-        .container {
-            height: 100px;
+        .footer {
+            padding: 3%;
+            bottom: 0;
+            width: 100%;
+            background-color: #5B9BE1;
+            box-shadow: 5px 5px 42px -10px #000000;
         }
 
-        #paper-plane {
-            background-image: url('../Immagini progetto/plane.png');
+        .contenitore {
+            font-weight: 300;
+            text-align: center;
+            margin: auto;
+        }
+
+        .contenitore ul {
+            list-style: none;
+        }
+
+        .riga-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .colonna-footer {
+            width: 20%;
+            flex: auto;
+        }
+
+        .colonna-footer h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .colonna-footer li {
+            font-size: 13px;
+        }
+
+        .invioConfermato {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer {
             position: fixed;
-            z-index: 1;
-            width: 50px;
-            height: 50px;
-            background-size: cover;
-            animation: fly 2s linear,fadeOut 0.5s 1.7s forwards;
-            transform-origin: center left;
-
-        }
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-
-        @keyframes fly {
-            0% {
-                transform: translate(0vw, 100vh) rotate(0deg) scale(2);
-            }
-            100%{
-                transform: translate(100vw, 0vh) rotate(0deg) scale(2);
-                display: none;
-            }
-
         }
     </style>
-    <link rel="stylesheet" href="../css/template.css">
-    <script rel="script" src="../JavaScript/changeCitations.js"></script>
-    <jsp:include page="../templates/intestazione.jsp"></jsp:include>
-    <jsp:include page="../templates/barra_navigazione.jsp"></jsp:include>
 </head>
 <body>
-
-<div class="container">
-    <div id="paper-plane"></div>
+<div class="intestazione">
+    <h1>TUM4WORLD</h1>
 </div>
-    <div class="confMessage">
-        <h1>Invio Confermato</h1>
-        <p>Grazie per averci contattato!<br>Abbiamo ricevuto il tuo messaggio e ti contatteremo al più presto.</p>
+
+<div class="invioConfermato">
+
+    <h1>Invio confermato</h1>
+    <p>
+        Il tuo messaggio è stato inviato con successo.
+        Ti ricontatteremo il prima possibile.
+    </p>
+</div>
+
+<footer class="footer">
+    <div class="contenitore">
+        <div class="riga-footer">
+            <div class="colonna-footer">
+                <h4>Associazione</h4>
+                <ul>
+                    <li>Tum4World</li>
+                </ul>
+            </div>
+
+            <div class="colonna-footer">
+                <h4>Sede legale</h4>
+                <ul>
+                    <li>Via della Riva 02000 Trento, Italia</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-
-<script>
-
-</script>
-<jsp:include page="../templates/mostraCitazioni.jsp"/>
-    <jsp:include page="../templates/footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>
