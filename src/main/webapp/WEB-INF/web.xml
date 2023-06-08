@@ -64,4 +64,28 @@
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/LoginServlet</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>InvioEmail</servlet-name>
+        <servlet-class>Controllers.InvioEmail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InvioEmail</servlet-name>
+        <url-pattern>/InvioEmail</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>invioConfermatoPaginaContatti</servlet-name>
+        <jsp-file>/JSP_pages/invioConfermatoPaginaContatti.jsp</jsp-file>
+        <init-param>
+            <param-name>invioConfermatoPaginaContatti</param-name>
+            <param-value>invio confermato</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>invioConfermatoPaginaContatti</servlet-name>
+        <url-pattern>/invioConfermato</url-pattern>
+    </servlet-mapping>
 </web-app>
