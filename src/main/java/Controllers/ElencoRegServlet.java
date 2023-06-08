@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name = "ElencoRegServlet", value = "/ElencoRegServlet")
+@WebServlet(name = "Controllers.ElencoRegServlet", value = "/Controllers.ElencoRegServlet")
 public class ElencoRegServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

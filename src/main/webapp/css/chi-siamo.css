@@ -1,0 +1,20 @@
+#p1 {
+    position: relative;
+    top: 100px;
+    padding-bottom: 140px;
+}
+
+#img1 {
+    float: left;
+    margin-right: fill;
+    size: auto;
+    padding-right: 10px;
+}
+
+#img2 {
+    float: right;
+    margin-left: auto;
+    size: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}

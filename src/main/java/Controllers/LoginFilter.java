@@ -1,18 +1,15 @@
 package Controllers;
 
-import javax.servlet.annotation.*;
-import java.io.IOException;
-import java.sql.*;
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import com.models.UserLoginStatus;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.*;
 
 
 @WebFilter(filterName = "LoginFilter")
@@ -138,35 +135,5 @@ public class LoginFilter implements Filter {
         req.setAttribute("loginStatus", loginStatus);
 
     }
-    private class UserLoginStatus {
-        private String username;
-        private String password;
-        private String type;
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-    }
-
 
 }

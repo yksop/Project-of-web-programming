@@ -143,7 +143,7 @@ function controllaData(){
     }
 }
 
-function validate(){
+function validateFormRegistrazione(){
     if(controlEmpty()){
         if(controllaPassword()){
             return controllaData();

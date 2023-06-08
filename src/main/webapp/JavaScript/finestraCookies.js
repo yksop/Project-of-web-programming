@@ -1,3 +1,5 @@
+let sceltaPresa = false;
+
 function setCookie(name, value) {
     var expires;
     var date = new Date();
@@ -5,7 +7,6 @@ function setCookie(name, value) {
     expires = "; expires=" + date.toUTCString();
     document.cookie = name + "=" + value + expires + "; path=/";
 }
-
 
 // Funzione per controllare se la finestra delle informazioni sui cookie deve essere mostrata
 function showCookieInfo() {
@@ -15,18 +16,24 @@ function showCookieInfo() {
 }
 
 function acceptCookies() {
-    //setCookie("cookieInfoShown", true, 1);
+    sceltaPresa = true;
     document.getElementById("cookie-info").style.animation = "fadeOut 1s ease-in-out forwards, slideDown 1s ease-in-out forwards";
     document.cookie = "useCookie=true; path=/";
 }
 
 function rejectCookies() {
-   //setCookie("cookieInfoShown", false, 1);
+    sceltaPresa = true;
     document.getElementById("cookie-info").style.animation = "fadeOut 1s ease-in-out forwards, slideDown 1s ease-in-out forwards";
     sessionStorage.setItem("useCookie", "false");
 }
 
+window.addEventListener('beforeunload', function(event) {
+    if (!sceltaPresa) {
+        event.preventDefault();
+        event.returnValue = '';
+    }
+});
+
 // Mostra la finestra delle informazioni sui cookie quando la pagina è completamente caricata
 
 window.addEventListener("load", showCookieInfo);
-

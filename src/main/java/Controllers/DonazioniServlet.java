@@ -1,23 +1,20 @@
 package Controllers;
 
 import com.google.gson.Gson;
+import com.models.Donazione;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
 import java.time.LocalDate;
-@WebServlet(name ="DonazioniServlet", value = "/DonazioniServlet")
+import java.util.ArrayList;
+import java.util.List;
+@WebServlet(name ="Controllers.DonazioniServlet", value = "/Controllers.DonazioniServlet")
 public class DonazioniServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
@@ -97,33 +94,6 @@ public class DonazioniServlet extends HttpServlet {
             out.close();
         }
     }
-
-    private class Donazione {
-        private int mese;
-        private int totale_donazioni;
-
-        public Donazione(int mese, int totale_donazioni) {
-            this.mese = mese;
-            this.totale_donazioni = totale_donazioni;
-        }
-
-        public int getMese() {
-            return mese;
-        }
-
-        public void setMese(int mese) {
-            this.mese = mese;
-        }
-
-        public int getTotaleDonazioni() {
-            return totale_donazioni;
-        }
-
-        public void setTotaleDonazioni(int totale_donazioni) {
-            this.totale_donazioni = totale_donazioni;
-        }
-    }
-
 
 }
 
