@@ -22,3 +22,30 @@
     padding-left: 10px;
     padding-bottom: 10px;
 }
+
+.buttonB {
+    margin: 5px;
+    position: center;
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #91B4DA;
+    color: #fff;
+    border: none;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    align-content: center;
+    border-radius: 40px;
+}
+
+.buttonB:hover {
+    background-color: cornflowerblue;
+    transform: scale(1.1);
+}
+
+.buttonB:active {
+    background: #91B4DA;
+    transform: scale(0.9);
+}

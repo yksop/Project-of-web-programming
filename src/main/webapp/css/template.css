@@ -89,6 +89,9 @@ nav ul li a {
   font-size: 13px;
 }
 
+.citazione {
+  background: #91B4DA;
+}
 
 #citazione {
   font-size: 17px;
@@ -107,34 +110,6 @@ nav ul li a {
   transform: translateX(-50%); /* Centra il div rispetto alla finestra */
   white-space: pre-line;
   z-index: 3;
-}
-
-
-.buttonB {
-  margin: 5px;
-  position: center;
-  align-self: center;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: cadetblue;
-  color: #fff;
-  border: none;
-  height: 40px;
-  width: 200px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  align-content: center;
-  border-radius: 40px;
-}
-
-.buttonB:hover {
-  background-color: cornflowerblue;
-  transform: scale(1.1);
-}
-
-.buttonB:active {
-  background-color: #333;
-  transform: scale(0.9);
 }
 
 

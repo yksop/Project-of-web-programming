@@ -1,0 +1,82 @@
+body {
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    font-size: 38px;
+    color: #333;
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
+    color: #666;
+    margin: 10px;
+
+}
+.confMessage{
+    margin: 10%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    align-self: center;
+    padding: 20px;
+    border-radius: 30px;
+    animation: slideUp 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+
+.container {
+    height: 100px;
+}
+
+#paper-plane {
+    background-image: url('../Immagini progetto/plane.png');
+    position: fixed;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    animation: fly 2s linear,fadeOut 0.5s 1.7s forwards;
+    transform-origin: center left;
+
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fly {
+    0% {
+        transform: translate(0vw, 100vh) rotate(0deg) scale(2);
+    }
+    100%{
+        transform: translate(100vw, 0vh) rotate(0deg) scale(2);
+        display: none;
+    }
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+}

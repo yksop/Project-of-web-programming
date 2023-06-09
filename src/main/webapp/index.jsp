@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Immagini progetto/Logo_Tum4World.png" type="image/icontype">
+    <link rel="icon" href="Immagini progetto/Logo_Tum4World.png" type="image/icontype">
     <link rel="stylesheet" href="css/home-page.css">
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/finestraCookies.css">
