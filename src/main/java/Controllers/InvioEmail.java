@@ -46,18 +46,11 @@ public class InvioEmail extends HttpServlet {
             message.setSubject(oggetto);
             message.setText(nome + cognome + messaggio);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/invioConfermato");
-
-            if(dispatcher != null) {
-                dispatcher.forward(request, response);
-            } else {
-                System.out.println("pagina non trovata");
-            }
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("/invioConfermato");
+            response.sendRedirect("./JSP_pages/invioConfermatoPaginaContatti.jsp");
 
             Transport.send(message);
         } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
