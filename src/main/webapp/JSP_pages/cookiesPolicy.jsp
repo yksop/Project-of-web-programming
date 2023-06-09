@@ -3,6 +3,7 @@
   <head>
     <title>Cookies Policy</title>
     <link rel="stylesheet" href="../css/cookiesPolicy.css">
+    <link rel="icon" href="../Immagini%20progetto/Logo_Tum4World.png" type="image/icontype">
   </head>
 
   <body>

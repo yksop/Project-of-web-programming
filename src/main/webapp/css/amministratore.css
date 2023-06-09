@@ -69,7 +69,7 @@ button {
 }
 .logout-button {
     display: flex;
-    margin-left: 92%;
+    margin-left: 93%;
     padding: 10px 20px;
     width: 90px;
     border-radius: 30px;
@@ -96,9 +96,10 @@ button:hover {
     z-index: 1;
     display: none;
     align-self: center;
-    margin: 40px;
-
-
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .box{

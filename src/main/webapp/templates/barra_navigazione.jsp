@@ -12,6 +12,7 @@
       <li><a href="${pageContext.request.contextPath}/JSP_pages/aderente.jsp">aderente</a></li>
       <li><a href="${pageContext.request.contextPath}/JSP_pages/simpatizzante.jsp">simpatizzante</a></li>
       <li><a href="${pageContext.request.contextPath}/JSP_pages/amministratore.jsp">amministratore</a></li>
+      <li><a href="${pageContext.request.contextPath}/JSP_pages/regConf.jsp">conf reg</a></li>
     </ul>
   </nav>
 </div>

@@ -19,46 +19,47 @@ function controlEmpty(){
     const boxuser=document.getElementById("Username");
 
 
-    if(user==""){
-        displayErrorMessage("inserire il nome");
-        boxuser.focus();
-        boxuser.style.border= "2px solid red";
-        return false;
-    }
 
-
-    if(name==""){
+    if(name===""){
         displayErrorMessage("inserire il nome");
         boxname.focus();
         boxname.style.border= "2px solid red";
         return false;
     }
 
-    if(lastname==""){
+    if(lastname===""){
         displayErrorMessage("inserire il cognome");
         boxlastname.focus();
         boxlastname.style.border= "2px solid red";
         return false;
     }
 
-    if(date==""){
+    if(date===""){
         displayErrorMessage("inserire la data");
         boxdate.focus();
         boxdate.style.border= "2px solid red";
         return false;
     }
 
-    if(tel==""){
+    if(tel===""){
         displayErrorMessage("inserire il numero di telefono");
         boxtel.focus();
         boxtel.style.border= "2px solid red";
         return false;
     }
 
-    if(email==""){
+    if(email===""){
         displayErrorMessage("inserire l'email");
         boxemail.focus();
         boxemail.style.border= "2px solid red";
+        return false;
+    }
+
+
+    if(user===""){
+        displayErrorMessage("inserire lo username");
+        boxuser.focus();
+        boxuser.style.border= "2px solid red";
         return false;
     }
 
@@ -72,7 +73,7 @@ function controllaPassword() {
     const confpassbox=document.getElementById("ConfPass");
     confpassbox.style.border= "2px solid white";
     passbox.style.border= "2px solid white";
-    if(password==""){
+    if(password===""){
         displayErrorMessage("inserire la password");
         passbox.focus();
         passbox.style.border= "2px solid red";
@@ -115,14 +116,14 @@ function controllaPassword() {
         return false;
     }
 
-    if(conferma==""){
+    if(conferma===""){
         displayErrorMessage("inserire la conferma password");
         confpassbox.focus();
         confpassbox.style.border= "2px solid red";
         return false;
     }
 
-    if(password != conferma){
+    if(password !== conferma){
         displayErrorMessage("La password confermata risulta diversa da quella scelta, controllare.");
         confpassbox.focus();
         confpassbox.style.border= "2px solid red";
@@ -143,7 +144,7 @@ function controllaData(){
     }
 }
 
-function validateFormRegistrazione(){
+function validate(){
     if(controlEmpty()){
         if(controllaPassword()){
             return controllaData();

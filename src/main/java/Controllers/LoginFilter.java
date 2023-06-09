@@ -1,35 +1,46 @@
 package Controllers;
 
-import com.models.UserLoginStatus;
-
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.sql.*;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.sql.*;
 
 
 @WebFilter(filterName = "LoginFilter")
 public class LoginFilter implements Filter {
-    public void init(FilterConfig config) throws ServletException {
-        // Inizializzazione del filtro
-    }
     private static final String DB_URL = "jdbc:derby://localhost:1527/WEB";
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-            throws IOException, ServletException {
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
+
+
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
+        Cookie[] cookies = request.getCookies();
+        // Controllo della sessione
+        HttpSession session = request.getSession();
+        String encodedUsername = (String) session.getAttribute("encodedUsername");
 
-        if(checkLoginStatus(request)) {
+        if("logout".equals(request.getParameter("action"))){
+            logOut(request,response, cookies);
+
+        } else if(checkLoginStatus(request, cookies, encodedUsername)) {
             UserLoginStatus loginStatus = (UserLoginStatus) request.getAttribute("loginStatus");
             String username = loginStatus.getUsername();
-            String password = loginStatus.getPassword();
             String type = loginStatus.getType();
 
-            if ("admin".equals(username) && "2Adm1n!".equals(password)) {
+            if ("admin".equals(username)) {
                 response.sendRedirect("./JSP_pages/amministratore.jsp");
             }
             else if ("Simpatizzante".equals(type)) {
@@ -38,63 +49,74 @@ public class LoginFilter implements Filter {
                 response.sendRedirect("./JSP_pages/aderente.jsp");
             } else {
                 // errore di qualche tipo
-                response.sendRedirect("./JSP_pages/login.jsp");
+                response.sendRedirect("./JSP_pages/logIn.jsp");
             }
 
-        } else {
+        } else{
             // Procedi con la richiesta
+            System.out.println("filter non utilizzato");
             chain.doFilter(request, response);
         }
 
     }
 
+    @Override
     public void destroy() {
-        // Distruzione del filtro
+
     }
 
-    private boolean checkLoginStatus(HttpServletRequest request) {
-        // Verifica se l'utente ha già effettuato il login tramite cookie o sessione URL-encoded
-        // Controllo dei cookie
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("loginCookie")) {
-                    // Hai trovato il cookie di login, verifica se i dati di accesso sono presenti
-                    String[] loginData = cookie.getValue().split(":");
-                    String username = loginData[0];
-                    String password = loginData[1];
 
-                    if (isValidLogin(username, password)) {
-                        String type= getRegistrationType(username,password);
-                        redirect(request,username,password,type);
-                        return true; // L'utente ha già effettuato il login
+    private void logOut(HttpServletRequest request, HttpServletResponse response, Cookie[] cookies) throws IOException {
+        String encodedUsername= (String) request.getSession().getAttribute("encodedUsername");
+
+        if(encodedUsername!=null){
+            request.getSession().setAttribute("encodedUsername",null);}
+        else if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("loginCookie")) {
+                        cookie.setValue(null);
+                        cookie.setMaxAge(0);
+                        cookie.setPath("/");
+                        response.addCookie(cookie);
+                        break;
                     }
                 }
             }
-        }
-
-        // Controllo della sessione
-        HttpSession session = request.getSession();
-        String encodedUsername = (String) session.getAttribute("encodedUsername");
-        String encodedPassword = (String) session.getAttribute("encodedPassword");
-        String username= decode(encodedUsername);
-        String password= decode(encodedPassword);
-
-        // Esegui la tua logica di autenticazione
-        if (encodedUsername != null && encodedPassword != null && isValidLogin(decode(encodedUsername), decode(encodedPassword))) {
-            String type=getRegistrationType(decode(encodedUsername),decode(encodedPassword));
-            redirect(request,username,password,type);
-            return true; // L'utente ha già effettuato il login
-        }
-
-        return false; // L'utente non ha ancora effettuato il login
     }
 
-    private boolean isValidLogin(String username, String password) {
-        if (username != null && password != null) {
-            return true;
-        }
-         else {return false;}
+    private boolean checkLoginStatus(HttpServletRequest request, Cookie[]  cookies, String encodedUsername) {
+        // Verifica se l'utente ha già effettuato il login tramite cookie o sessione URL-encoded
+        // Controllo dei cookie
+
+            // Esegui la tua logica di autenticazione
+            if (isValidLogin(encodedUsername)) {
+                String usernameSession = decode(encodedUsername);
+                String type = getRegistrationType(usernameSession);
+                createUser(request, usernameSession, type);
+                return true; // L'utente ha già effettuato il login
+            } else if (cookies != null) {
+
+                for (Cookie cookie : cookies) {
+
+                    if (cookie.getName().equals("loginCookie")) {
+
+                        // Hai trovato il cookie di login, verifica se i dati di accesso sono presenti
+                        String[] loginData = cookie.getValue().split(":");
+                        String username = loginData[0];
+
+                        if (isValidLogin(username)) {
+                            String type = getRegistrationType(username);
+                            createUser(request, username, type);
+                            return true; // L'utente ha già effettuato il login
+                        }
+                    }
+                }
+            }
+        return false;
+    }
+
+    private boolean isValidLogin(String username) {
+        return username != null;
     }
 
     private String decode(String encodedValue) {
@@ -106,13 +128,12 @@ public class LoginFilter implements Filter {
         }
     }
 
-    private String getRegistrationType(String username, String password) {
+    private String getRegistrationType(String username) {
         try {
             Connection conn = DriverManager.getConnection(DB_URL);
-            String query = "SELECT registrationtype FROM users WHERE username = ? AND password = ?";
+            String query = "SELECT registrationtype FROM users WHERE username = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 return rs.getString("registrationtype");
@@ -126,14 +147,33 @@ public class LoginFilter implements Filter {
         return null;
     }
 
-    private void redirect(HttpServletRequest req,String username, String password,String type){
+    private void createUser(HttpServletRequest req,String username,String type){
         UserLoginStatus loginStatus = new UserLoginStatus();
         loginStatus.setUsername(username);
-        loginStatus.setPassword(password);
         loginStatus.setType(type);
         // Salva l'oggetto UserLoginStatus come attributo della richiesta
         req.setAttribute("loginStatus", loginStatus);
-
     }
+    private class UserLoginStatus {
+        private String username;
+        private String type;
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+    }
+
 
 }

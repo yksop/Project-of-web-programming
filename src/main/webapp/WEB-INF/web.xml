@@ -56,6 +56,7 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>Controllers.LoginFilter</filter-class>
@@ -64,4 +65,14 @@
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/LoginServlet</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>InvioEmail</servlet-name>
+        <servlet-class>Controllers.InvioEmail</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InvioEmail</servlet-name>
+        <url-pattern>/InvioEmail</url-pattern>
+    </servlet-mapping>
 </web-app>

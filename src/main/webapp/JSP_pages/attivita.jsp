@@ -8,7 +8,6 @@
     <link rel="icon" href="../Immagini progetto/Logo_Tum4World.png" type="image/icontype">
     <link rel="stylesheet" type="text/css" href="../css/template.css">
     <link rel="stylesheet" type="text/css" href="../css/attivita.css">
-    <script rel="script" src="../JavaScript/changeCitations.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">    <title>Tum4World</title>
   </head>
   <body>
@@ -57,6 +56,8 @@
         </div>
       </div>
     </div>
+
+    <script rel="script" src="../JavaScript/changeCitations.js"></script>
     <jsp:include page="../templates/mostraCitazioni.jsp"/>
     <jsp:include page="../templates/footer.jsp"/>
   </body>

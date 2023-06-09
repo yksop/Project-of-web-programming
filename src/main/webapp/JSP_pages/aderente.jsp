@@ -2,10 +2,9 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Aderente</title>
-
+    <title>Tum4world</title>
+    <link rel="icon" href="../Immagini%20progetto/Logo_Tum4World.png" type="image/icontype">
     <link rel="stylesheet" href="../css/aderente.css">
-    <script rel="script" src="../JavaScript/aderente.js"></script>
     <style>
         .sidebar {
             width: 25%;
@@ -25,8 +24,8 @@
 
 <div class="content">
 
-    <h1 style="position: center">Bentornato!</h1>
-    <button class="logout-button" onclick="window.location.href='signIn.jsp'">Logout</button>
+    <h1 id="welcome-message" style="position: center"></h1>
+    <button class="logout-button" onclick="logOut()">Logout</button>
 
     <div class="box">
         <div class="menu-button-cont">
@@ -34,6 +33,7 @@
             <button class="menu-button registration-button">Iscrizione alle attivit&agrave;</button>
             <button class="menu-button donation-button">Effettua una donazione</button>
             <button class="menu-button cancel-button">Cancella Iscrizione</button>
+            <button class="menu-button" onclick="window.location.href='../index.jsp'">Torna al sito</button>
         </div>
 
         <div class="finestre">
@@ -70,119 +70,18 @@
 
 
             <div id="cancel-data" class="content-container ">
-                <p style=" font-family: 'Arial'; font-size: 20px; color: orangered">Sei sicuro di voler cancellare l'iscrizione?</p>
-                <div class="confirm-buttons">
+                <div id="iscrizone" class="confirm-buttons">
+                    <p style=" font-family: 'Arial'; font-size: 20px; color: orangered">Sei sicuro di voler cancellare l'iscrizione?</p>
                     <button class="buttonB confButton" onclick="cancellaIscrizione()">Conferma</button>
                     <button class="buttonB" onclick="goBack('cancel-data')">Indietro</button>
                 </div>
             </div>
-
-            <div id="confirmation-message" class="confirm-container" style="display: none; text-align: center; margin-top: 20px; font-size: 40px; color: lightseagreen"></div>
-
+            <p id="confirmation-message" class="content-container"></p>
         </div>
-
-
-
     </div>
-
-
-
 </div>
 
-
-
-<script>
-
-    const profileButton = document.querySelector('.profile-button');
-    const registrationButton = document.querySelector('.registration-button');
-    const donationButton = document.querySelector('.donation-button');
-    const cancelButton = document.querySelector('.cancel-button');
-    const profileData = document.getElementById('profile-data');
-    const activityData = document.getElementById('activity-data');
-    const cancelData = document.getElementById('cancel-data');
-    const donationData = document.getElementById('donation-data');
-
-
-    profileButton.addEventListener('click', function() {
-        hideContentContainers();
-        profileData.style.display = 'block';
-    });
-
-    registrationButton.addEventListener('click', function() {
-        hideContentContainers();
-        activityData.style.display = 'block';
-    });
-
-    donationButton.addEventListener('click', function() {
-        hideContentContainers();
-        donationData.style.display="block";
-    });
-
-    cancelButton.addEventListener('click', function() {
-        hideContentContainers();
-        cancelData.style.display = 'block';
-    });
-
-
-    function hideContentContainers() {
-        const contentContainers = document.querySelectorAll('.content-container');
-        contentContainers.forEach(function(container) {
-            container.style.display = 'none';
-        });
-    }
-
-    function cancellaIscrizione() {
-        var confirmationMessage = document.getElementById('confirmation-message');
-        confirmationMessage.innerText = 'Iscrizione cancellata';
-        confirmationMessage.style.display = 'block';
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../RegServlet?action=delete', true); // Aggiungi l'azione "delete" come parametro nella richiesta
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Chiamata AJAX completata con successo
-                setTimeout(function() {
-                    window.location.href = 'signIn.jsp';
-                }, 3000);
-            }
-        };
-
-        xhr.send();
-    }
-
-
-    function sendDonation() {
-        var donationAmount = document.getElementById('donation-input').value;
-        var url = '../DonazioniServlet?action=aderente&donation=' + donationAmount;
-        if (donationAmount !== '') {
-            document.getElementById('donation-input').value = '';
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Chiamata AJAX completata con successo
-                    var messageDiv = document.getElementById('donation-message');
-                    messageDiv.innerText = 'Grazie per aver donato!';
-                    messageDiv.style.display = 'block';
-                    setTimeout(function() {
-                        messageDiv.style.display = 'none';
-                    }, 3000);
-                }
-            };
-            xhr.send();
-        }
-    }
-
-    function goBack(button) {
-        const cancelData = document.getElementById(button);
-        cancelData.style.display = 'none';
-    }
-
-
-
-</script>
-
+<script rel="script" src="../JavaScript/aderente.js"></script>
 
 </body>
 </html>

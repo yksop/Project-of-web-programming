@@ -91,20 +91,19 @@ nav ul li a {
 
 
 #citazione {
+  display: flex;
   font-size: 17px;
   font-style: italic;
   font-weight: bold;
   text-align: center;
   color: whitesmoke;
   width: auto; /* Larghezza desiderata */
-  height: 90px; /* Altezza desiderata */
-  /*border: 1px solid black;*/
+  height: auto; /* Altezza desiderata */
   word-wrap: break-word;
-  align-items: center;
   justify-content: center;
-  display: flex;
+  align-content: center;
   left: 50%; /* Centra il div rispetto alla finestra */
-  transform: translateX(-50%); /* Centra il div rispetto alla finestra */
+  transform: translateX(-50%);
   white-space: pre-line;
   z-index: 3;
 }
@@ -116,7 +115,7 @@ nav ul li a {
   align-self: center;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: cadetblue;
+  background-color: teal;
   color: #fff;
   border: none;
   height: 40px;
@@ -128,7 +127,7 @@ nav ul li a {
 }
 
 .buttonB:hover {
-  background-color: cornflowerblue;
+  background-color: #0022ff;
   transform: scale(1.1);
 }
 

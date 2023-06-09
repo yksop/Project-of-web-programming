@@ -1,5 +1,6 @@
 package Controllers;
 
+import javax.jms.Session;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -13,7 +14,6 @@ public class LoginServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/WEB";
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,21 +28,19 @@ public class LoginServlet extends HttpServlet {
         }
 
         try {
-            if (checkExistingUsername(username)) {
-                if(checkExistingPassword(password)) {
+                if(checkExistingUser(username,password)) {
 
                     boolean useCookie = isCookieAccepted(request);
                     if (useCookie) {
-                        // Imposta il cookie di login
-                        setLoginCookie(response, username, password);
+                        setLoginCookie(response, username);
                     } else {
                         // Imposta i parametri nella sessione URL-encoded
-                        setLoginSession(request.getSession(), username, password);
+                        setLoginSession(request.getSession(), username);
                     }
-
 
                     String registrationType = getRegistrationType(username, password);
                     if ("admin".equals(username) && "2Adm1n!".equals(password)) {
+
                         response.sendRedirect("./JSP_pages/amministratore.jsp");
                     } else if ("Simpatizzante".equals(registrationType)) {
                         response.sendRedirect("./JSP_pages/simpatizzante.jsp");
@@ -50,32 +48,29 @@ public class LoginServlet extends HttpServlet {
                         response.sendRedirect("./JSP_pages/aderente.jsp");
                     } else {
                         // errore di qualche tipo
-                        response.sendRedirect("./JSP_pages/login.jsp");
+                        response.sendRedirect("./JSP_pages/logIn.jsp");
                     }
 
                 } else {
-                    request.setAttribute("errorMessage", "2: Password non presente. Si prega di riprovare o effettuare il signIn.");
-                    response.sendRedirect("./JSP_pages/logIn.jsp");
-                }
+                    request.setAttribute("errorMessage", "2: Utente non presente. Si prega di riprovare o effettuare il signIn.");
+                    request.getRequestDispatcher("./JSP_pages/logIn.jsp").forward(request, response);
 
-            }
-             else {
-                request.setAttribute("errorMessage", "2: Utente non presente. Si prega di riprovare o effettuare il signIn.");
-                response.sendRedirect("./JSP_pages/logIn.jsp");
-            }
+                }
         }
         catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("./JSP_pages/logIn.jsp");
         }
 
-
     }
-    private boolean checkExistingUsername(String username) throws SQLException {
-        String query = "SELECT COUNT(*) FROM Users WHERE Username = ?";
+
+
+    private boolean checkExistingUser(String username, String password) throws SQLException {
+        String query = "SELECT COUNT(*) FROM Users WHERE Username = ? AND Password = ?";
         try (Connection connection = DriverManager.getConnection(DB_URL);
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
+            statement.setString(2, password);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     int count = resultSet.getInt(1);
@@ -83,24 +78,10 @@ public class LoginServlet extends HttpServlet {
                 }
             }
         }
+
         return false;
     }
 
-
-    private boolean checkExistingPassword(String password) throws SQLException {
-        String query = "SELECT COUNT(*) FROM Users WHERE PASSWORD = ?";
-        try (Connection connect = DriverManager.getConnection(DB_URL);
-             PreparedStatement statement = connect.prepareStatement(query)) {
-            statement.setString(1, password);
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    int count = resultSet.getInt(1);
-                    return count > 0;
-                }
-            }
-        }
-        return false;
-    }
 
     private String getRegistrationType(String username, String password) {
         try {
@@ -136,27 +117,19 @@ public class LoginServlet extends HttpServlet {
         return false; // I cookie sono disattivati
     }
 
-    private void setLoginCookie(HttpServletResponse response, String username, String password) {
-        // Imposta il cookie di login
-        // Puoi utilizzare il nome e il valore del cookie per memorizzare i dati di accesso in modo sicuro
-        // In questo esempio, i dati di accesso sono separati da due punti (:)
-
-        String loginData = username + ":" + password;
+    private void setLoginCookie(HttpServletResponse response, String username) {
+        String loginData = username;
         Cookie cookie = new Cookie("loginCookie", loginData);
         cookie.setPath("/");
         response.addCookie(cookie);
-
     }
 
-    private void setLoginSession(HttpSession session, String username, String password) throws UnsupportedEncodingException {
-        // Imposta i parametri nella sessione URL-encoded
-        // Puoi utilizzare il metodo URLEncoder.encode() per codificare i dati di accesso in modo sicuro
 
+
+
+    private void setLoginSession(HttpSession session, String username) throws UnsupportedEncodingException {
         String encodedUsername = java.net.URLEncoder.encode(username, "UTF-8");
-        String encodedPassword = java.net.URLEncoder.encode(password, "UTF-8");
-
         session.setAttribute("encodedUsername", encodedUsername);
-        session.setAttribute("encodedPassword", encodedPassword);
     }
 }
 

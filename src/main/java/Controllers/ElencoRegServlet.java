@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name = "Controllers.ElencoRegServlet", value = "/Controllers.ElencoRegServlet")
+@WebServlet(name = "ElencoRegServlet", value = "/ElencoRegServlet")
 public class ElencoRegServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,7 +37,7 @@ public class ElencoRegServlet extends HttpServlet {
 
             res = stmt.executeQuery(query);
 
-            // Genera la risposta in formato HTML
+
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.println("<h2>Elenco Utenti</h2>");

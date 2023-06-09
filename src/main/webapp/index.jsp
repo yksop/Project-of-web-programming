@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Immagini progetto/Logo_Tum4World.png" type="image/icontype">
+    <link rel="icon" href="Immagini%20progetto/Logo_Tum4World.png" type="image/icontype">
     <link rel="stylesheet" href="css/home-page.css">
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/finestraCookies.css">
@@ -14,28 +14,24 @@
 <body style="overflow-y: auto">
 <jsp:include page="templates/intestazione.jsp"/>
 <jsp:include page="templates/barra_navigazione.jsp"/>
-<div style="margin: 20px">
-    <div style="display: flex; justify-content: space-between">
+<div style="margin: 20px; align-content: center; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 15px;">
     <img id="img1" alt="img1" src="Immagini progetto/Logo_Tum4World.png" style="height: 100px; align-content: center;">
-    <div style="margin: 10px; text-align: left; align-content: center">
-        Ciao! Noi siamo Tum4World!<br>Un'associazione non-profit che ha l'obiettivo di rendere il mondo un posto migliore. Siamo nati nel
+    <div style="width: 1200px; margin-top:20px;">
+        <h2 style="margin-bottom:5px; font-size: 25px; font-weight: bold; color: darkcyan">Ciao! Noi siamo Tum4World!</h2>
+        <p style="font-weight: bold">Un'associazione non-profit che ha l'obiettivo di rendere il mondo un posto migliore.</p><br><a href="JSP_pages/chi-siamo.jsp">Siamo</a> nati nel
         2016 da un'idea del nostro fondatore Chris Formag, e da allora non abbiamo smesso di aiutare persone ed animali in giro per la Terra!<br>
-        Ad oggi siamo attivi nelle zone del mondo meno fortunate, in particolare siamo presenti in Africa, Asia del Sud-est e nel centro America.
-        Siamo contenti che tu sia capitato sulla nostra pagine web oggi. Come puoi vedere, un men&ugrave; per navigare all'interno delle pagine &egrave;
-        al tuo servizio, come anche la possibilit&agrave; di iscriverti se non lo hai ancora fatto. <br>Speriamo vivamente che tu possa
+        Ad oggi siamo <a href="JSP_pages/attivita.jsp">attivi</a> nelle zone del mondo meno fortunate, in particolare siamo presenti in Africa, Asia del Sud-est e nel centro America.<br>
+        Siamo contenti che tu sia capitato sulla nostra pagine web oggi.<br><br>Come puoi vedere, un men&ugrave; per navigare all'interno delle pagine &egrave;
+        al tuo servizio, come anche la possibilit&agrave; di <a href="JSP_pages/signIn.jsp">iscriverti</a>, se non lo hai ancora fatto. <br>Speriamo vivamente che tu possa
         trovare cio&apos; che ti serva.
-    </div>
-    </div>
-    <div style="display: flex; justify-content: space-between">
-        <div id="p1" style="text-align: left; align-content: center">
-            Se hai bisogno di parlare direttamente con noi, non esitare a contattarci, tutte le informazioni
-            di cui hai bisogno sono in fondo ad ogni pagina.<br>Buona navigazione da parte di Tum4World!!!<br>
-            Qui puoi scaricare il nostro volantino informativo:<br>
-            <a id="bottoneVolantino" href = "Immagini progetto/volantino.pdf" Download = "Volantino">
-                <button type = "button" class="buttonB"> Scarica il volantino </button>
-            </a>
-        </div>
-        <img id="img2" alt="img2" src="Immagini progetto/immagine_homepage.jpg" style=" height: 180px; align-content: center">
+        <br><br>
+        Se hai bisogno di parlare direttamente con noi, non esitare a <a href="JSP_pages/contatti.jsp">contattarci</a>, tutte le informazioni
+        di cui hai bisogno sono in fondo ad ogni pagina.<br><br>
+        <h2 style="margin-bottom:10px; font-size: 20px; font-weight: bold; color: darkcyan">Buona navigazione da parte di Tum4World!!!</h2>
+        <p style="font-weight: bold; margin-bottom: 10px">Qui puoi scaricare il nostro volantino informativo:</p>
+        <a id="bottoneVolantino" href = "Immagini progetto/volantino.pdf" Download = "Volantino">
+            <button type = "button" class="buttonB"> Scarica il volantino </button>
+        </a>
     </div>
 </div>
 <jsp:include page="templates/mostraCitazioni.jsp"/>
@@ -63,8 +59,8 @@
         xhr.send();
     }
 
-    // Aggiorna la citazione iniziale
-    getCitazioneCasuale();
+
+   getCitazioneCasuale();
 
     // Aggiorna la citazione ogni 20 secondi
     setInterval(getCitazioneCasuale, 2000);

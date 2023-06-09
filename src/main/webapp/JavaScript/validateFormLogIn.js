@@ -7,31 +7,42 @@ function displayErrorMessage(message) {
 function control(){
     const user=document.getElementById("Username").value;
     const boxuser=document.getElementById("Username");
+    const password=document.getElementById("Password").value;
+    const passbox=document.getElementById("Password");
 
 
-
-    if(user==""){
-        displayErrorMessage("inserire il nome");
+    if(user===""){
+        displayErrorMessage("inserire lo username");
         boxuser.focus();
         boxuser.style.border= "2px solid red";
+
         return false;
     }
 
 
-    const password=document.getElementById("Password").value;
-    const passbox=document.getElementById("Password");
-    passbox.style.border= "2px solid white";
-
-    if(password==""){
+    if(password===""){
         displayErrorMessage("inserire la password");
         passbox.focus();
         passbox.style.border= "2px solid red";
         return false;
     }
 
-
+    if (password.length !== 8 && password!=="2Adm1n!") {
+        displayErrorMessage("la password deve essere lunga 8 caratteri");
+        passbox.focus();
+        passbox.style.border= "2px solid red";
+        return false;
+    }
     if (!/\d/.test(password)) {
         displayErrorMessage("la password deve contenere almeno un carattere numerico");
+        passbox.focus();
+        passbox.style.border= "2px solid red";
+        return false;
+    }
+
+    //(case insensitive)
+    if ((!/j/i.test(password) || !/d/i.test(password) || !/a/i.test(password)) && password!=="2Adm1n!") {
+        displayErrorMessage("la password deve contenere i caratteri j,d,a. (indifferente se maiuscolo o minuscolo)");
         passbox.focus();
         passbox.style.border= "2px solid red";
         return false;
@@ -56,30 +67,10 @@ function control(){
 
 }
 
-
 function validate() {
-    if(document.cookie)
+    console.log("entrato in validate")
     if (control()) {
         return true;
     }
     return false;
-}
-
-window.addEventListener('load', function(){
-    var loginCookie = document.cookie.includes('loginCookie');
-    var encodedUsername = getQueryParam('encodedUsername');
-    var encodedPassword = getQueryParam('encodedPassword');
-
-// Mostra il contenitore corretto in base ai dati disponibili
-    if (loginCookie || (encodedUsername && encodedPassword)) {
-        document.getElementById('fast-way').style.display = 'block';
-    } else{
-        document.getElementById('formContainer').style.display = 'block';
-    }
-
-});
-
-function getQueryParam(paramName) {
-    var urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(paramName);
 }

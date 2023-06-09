@@ -103,6 +103,14 @@ h1 {
     background-color: antiquewhite;
 }
 
+#confirmation-message{
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: lightseagreen;
+}
+
 
 #donation-button {
     background-color: lightseagreen;
@@ -269,4 +277,6 @@ ul li:hover {
     background-color: #ff0066;
     color: #fff;
 }
+
+
 

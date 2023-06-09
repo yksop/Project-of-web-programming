@@ -3,6 +3,7 @@
 // Funzione per ottenere una citazione casuale dal file JSON
 function getCitazioneCasuale() {
     var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../DataJSON/citazioni.json", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("entrato");
@@ -14,7 +15,6 @@ function getCitazioneCasuale() {
             citazioneDiv.innerHTML = citazione;
         }
     };
-    xhr.open("GET", "../DataJSON/citazioni.json", true);
     xhr.send();
 }
 
