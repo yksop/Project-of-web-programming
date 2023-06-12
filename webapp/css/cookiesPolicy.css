@@ -1,0 +1,72 @@
+body {
+    background-color: #fff8dc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cont{
+    margin:10%;
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    width: auto;
+    font-size: 24px;
+}
+
+ul {
+    margin: 5px;
+    padding: 0;
+    width: 500px;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#fortune.biscotto {
+    width: 60px;
+    height: 60px;
+    background-image: url('../Immagini progetto/fortune-cookie.png');
+
+    background-size: cover;
+
+    animation: wiggle 2s infinite;
+}
+
+#cookie.biscotto {
+    width: 60px;
+    height: 60px;
+    background-image: url('../Immagini progetto/cookies.png');
+
+    background-size: cover;
+
+    animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}

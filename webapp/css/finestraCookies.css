@@ -1,0 +1,96 @@
+body{
+    overflow: hidden;
+}
+
+
+#cookie-info {
+    position: absolute;
+    bottom: -100px;
+    left: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    background-color: #fff8dc;
+    border: 3px solid #f60505;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 350px;
+    animation: slideUp 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+#cookie-info.show {
+    bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 20px;
+}
+.button.accept {
+    background-color: #4caf50;
+}
+
+.button.reject {
+    background-color: #f44336;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: -15px; /* posizionato al di fuori dello schermo */
+    }
+    100% {
+        bottom: 20px; /* posizionato al di sopra del piede dello schermo */
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+
+    }
+    to {
+        opacity: 0;
+        bottom: -20px;
+    }
+}
+
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
