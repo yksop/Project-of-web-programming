@@ -1,0 +1,24 @@
+.corpo-chisiamo h1{
+    text-align: center;
+    padding: 2% 0 0 2%;
+    color: #3F6C9D;
+}
+
+.riga-corpo {
+    align-content: center;
+    text-align: justify;
+    padding: 2% 2% 2% 2%;
+}
+
+.immagine-corpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+img {
+    max-width: 40%;
+    height: auto;
+    box-shadow: 5px 5px 27px -10px #000000;
+}

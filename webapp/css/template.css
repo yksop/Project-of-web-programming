@@ -1,0 +1,141 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* regole per il design dell'intestazione */
+
+.intestazione {
+  background-color: #5B9BE1;
+  padding: 2%;
+  box-shadow: 5px 5px 15px -10px #000000;
+}
+
+.intestazione h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+body {
+  height: auto
+}
+
+/* regole per il design della barra di navigazione */
+
+.navigazione {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav ul li a {
+  color: #5B9BE1;
+  text-decoration: none;
+}
+
+/* regole per il design del footer */
+
+.footer {
+  padding: 3%;
+  width: 100%;
+  background-color: #5B9BE1;
+  box-shadow: 5px 5px 42px -10px #000000;
+  position: relative;
+  height: 30%;
+  z-index: 0;
+  bottom: 0;
+
+}
+
+.contenitore {
+  font-weight: 300;
+  text-align: center;
+  margin: auto;
+}
+
+.contenitore ul {
+  list-style: none;
+}
+
+.riga-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.colonna-footer {
+  width: 20%;
+  flex: auto;
+}
+
+.colonna-footer h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.colonna-footer li {
+  font-size: 13px;
+}
+
+
+#citazione {
+  display: flex;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  color: whitesmoke;
+  width: auto; /* Larghezza desiderata */
+  height: auto; /* Altezza desiderata */
+  word-wrap: break-word;
+  justify-content: center;
+  align-content: center;
+  left: 50%; /* Centra il div rispetto alla finestra */
+  transform: translateX(-50%);
+  white-space: pre-line;
+  z-index: 3;
+}
+
+
+.buttonB {
+  margin: 5px;
+  position: center;
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: teal;
+  color: #fff;
+  border: none;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  align-content: center;
+  border-radius: 40px;
+}
+
+.buttonB:hover {
+  background-color: #0022ff;
+  transform: scale(1.1);
+}
+
+.buttonB:active {
+  background-color: #333;
+  transform: scale(0.9);
+}
+
+
+
+
